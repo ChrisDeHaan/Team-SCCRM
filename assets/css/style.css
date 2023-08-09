@@ -13,10 +13,11 @@ h2 {
 
 body {
     background-color: rgb(28, 44, 72);
+
 }
 
 #logo {
-    display: flexbox;
+  width: 5%;
 
 }
 
@@ -27,26 +28,29 @@ body {
 
 #navlinks {
     color: aliceblue;
+ 
 }
 
-
+#navlinks:hover {
+    color: rgb(137, 185, 185);
+}
 .logo-container {
-    text-align: center;
+    text-align: left;
     /* Center the logo horizontally */
-    margin-top: 20px;
+   
     /* Add space at the top if needed */
     background-color: #f0f0f0;
     /* Add a background color to create a banner effect */
-    padding: 10px 0;
+    padding: 5px 0;
     /* Add padding to the top and bottom of the banner */
 }
 
 .logo-container img {
-    display: block;
+    display: inline-flex;
     /* Make the image a block element to center it within the banner */
-    margin: 0 auto;
+    margin-left: 15px;
     /* Center the image horizontally within the banner */
-    width: 200px;
+    width: 100px;
     /* Adjust the width as needed */
     height: auto;
     /* Maintain aspect ratio */
