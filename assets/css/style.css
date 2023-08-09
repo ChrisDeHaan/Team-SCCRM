@@ -1,11 +1,18 @@
-#logo{
-    display: flexbox;
-   
+* Develop by START */
+.containerDb {
+    border: 3px solid black;
 }
-#navbar{
-    margin-left:auto;
-    
+
+h2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
 }
-#navlinks{
-    color: aliceblue;
+/* Develop by END */
+
+body {
+    background-color: rgb(28, 44, 72);
+
 }
+
