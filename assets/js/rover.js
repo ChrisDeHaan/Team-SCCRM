@@ -7,7 +7,10 @@
 // kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr
 
 // ELEMENTS
-galleryEl = $('#rover-gallery-section');
+galleryEl = $('#rover-gallery-display');
+roverSelectEl = $('#rover-select')
+cameraSelectEl = $('#rover-cam-select')
+solDateEl = $('#rover-sol-input')
 
 // ELEMENT TEMPLATES
 galleryCardEl = `<div id="rover-image-card" class="card" style="width: 20rem;">
@@ -20,8 +23,9 @@ galleryCardEl = `<div id="rover-image-card" class="card" style="width: 20rem;">
 // API CALL
 
 $(document).ready(function () {
+
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/
-curiosity/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=0&camera=fhaz`)
+    curiosity/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=1000`)
         .then(response => {
             return response.json();
         })
@@ -38,8 +42,7 @@ curiosity/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=0&camera=f
                         <div class="card-body">
                             <p class="card-text">Image: Camera</p>
                         </div>
-                </div>
-                `)
+                </div>`)
             }
         })
 })
