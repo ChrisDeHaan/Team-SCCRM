@@ -1,0 +1,19 @@
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// MARS ROVER PAGE //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// API KEY
+// kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr
+
+
+// API CALL
+
+fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/
+curiosity/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=1000&camera=fhaz`)
+.then(response => {
+    return response.json();
+})
+.then(response => {
+    console.log(response);
+})
