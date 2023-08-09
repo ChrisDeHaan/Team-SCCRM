@@ -1,0 +1,22 @@
+:root {
+    --almost-black: rgb(22, 21, 21);
+    --dark-grey: rgb(41, 40, 40);
+    --grey: rgb(101, 100, 100);
+    --light-grey: grey;
+}
+
+body {
+    background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
+    var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%);
+    color: white;
+}
+
+.bg-custom {
+    background: linear-gradient(var(--grey) 15%, var(--light-grey)50%, var(--grey)85%);
+    border: 3px solid var(--dark-grey);
+}
+
+.border-custom {
+    border: 8px solid var(--dark-grey);
+    border-radius: 3%;
+}
