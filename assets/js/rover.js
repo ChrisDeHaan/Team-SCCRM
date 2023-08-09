@@ -13,25 +13,21 @@ cameraSelectEl = $('#rover-cam-select')
 solDateEl = $('#rover-sol-input')
 searchButtonEl = $('#rover-search')
 
-// ELEMENT TEMPLATES
-galleryCardEl = `<div id="rover-image-card" class="card" style="width: 20rem;">
-                    <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Image: Camera</p>
-                        </div>
-                </div>`;
-
 // API CALL
+function searchRover() {
 
-function fetchRover() {
+    // The Mars Rover API is called with query parameters set by user-selected options on the page.
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverSelectEl.val()}/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=${solDateEl.val()}&camera=${cameraSelectEl.val()}`)
         .then(response => {
             return response.json();
         })
         .then(response => {
+
+            // The image gallery is emptied for repopulation.
             galleryEl.empty();
 
             // A card is created for each photo in the response
+            // and added to the gallery.
             for (var i = 0; i < response.photos.length; i++) {
                 galleryEl.append(`
                 <div id="rover-image-card" class="card" style="width: 20rem;">
@@ -49,6 +45,6 @@ function fetchRover() {
 
 $(document).ready(function () {
 
-    searchButtonEl.on('click', fetchRover)
+    searchButtonEl.on('click', searchRover)
 
 })
