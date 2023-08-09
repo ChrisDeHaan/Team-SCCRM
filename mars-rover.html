@@ -5,35 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCCRM | Mars Rover</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/cam.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/apod.css">
 
 </head>
 
 <body>
     <header>
-        <div class="logo-container"> 
+        <div class="logo-container">
             <img src="assets/images/image_720.png" class="logo-container img" alt="logo goes here">
         </div>
-        <nav id="navbar"class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid ml-auto">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse bg-dark" id="navbarNavAltMarkup">
-                <div id="navbar" class="navbar-nav ml-auto">
-                  <a id="navlinks"class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  <a id="navlinks"class="nav-link" href="mars-rover.html">Mars Rover</a>
-                  <a id="navlinks"class="nav-link" href="apod.html">APOD</a>
-                  <a id="navlinks"class="nav-link" href="developed-by.html">Developed By</a>
-                  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-dark" id="navbarNavAltMarkup">
+                    <div id="navbar" class="navbar-nav ml-auto">
+                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
-    <main class="mx-auto mt-5 col-8" ">
+    <main class="mx-auto mt-5 col-8" style="color: white;">
 
 
         <!-- This section contains cards for each rover.
@@ -82,27 +86,27 @@
         Photos should be labeled with their respective cameras. -->
         <section id="rover-gallery-section" class="mb-5">
             <h2>Rover Gallery</h2>
-            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly w-100 p-5">
+            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5">
 
-                <div id="rover-placeholder-image" class="card" style="width: 18rem;">
+                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
                     </div>
                 </div>
-                <div id="rover-placeholder-image" class="card" style="width: 18rem;">
+                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
                     </div>
                 </div>
-                <div id="rover-placeholder-image" class="card" style="width: 18rem;">
+                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
                     </div>
                 </div>
-                <div id="rover-placeholder-image" class="card" style="width: 18rem;">
+                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
@@ -115,10 +119,12 @@
     </main>
 
     <footer class="row">
-      <div class="col-md-8 mx-auto py-3 text-center">
-          <a href="https://github.com/ChrisDeHaan/Team-SCCRM" target="_blank"><img src="./assets/images/GitHub-Logo.png" style="height: 50px; width: 90px;" alt="GitHub link to site repo"></a>
-      </div>
-  </footer>
+        <div class="col-md-8 mx-auto py-3 text-center">
+            <a href="https://github.com/ChrisDeHaan/Team-SCCRM" target="_blank"><img
+                    src="./assets/images/GitHub-Logo.png" style="height: 50px; width: 90px;"
+                    alt="GitHub link to site repo"></a>
+        </div>
+    </footer>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
