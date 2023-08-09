@@ -1,0 +1,16 @@
+/* Develop by START */
+.containerDb {
+    border: 3px solid black;
+}
+
+.dbH2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.imgContainerDb {
+    justify-content: center;
+}
+/* Develop by END */
