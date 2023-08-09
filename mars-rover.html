@@ -43,49 +43,79 @@
         <!-- This section contains cards for each rover.
         Cards contain a photo, name, and article. -->
         <section id=" rover-info-section">
-        <h2>Rover Bio</h2>
-        <!-- CURIOSITY -->
-        <card id="curiosity-card" class="d-flex flex-row mb-5 border">
-            <img src="assets/images/rover_curiosity_avatar.jpg" class="col-4">
-            <div id="curiosty-text" class="ms-3">
-                <h3 id="curiosity-title">Curiosity</h3>
-                <p id="curiosity-summary">Curiosity info here.</p>
-                <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
-            </div>
-        </card>
-        <!-- SPIRIT -->
-        <card id="spirit-card" class="d-flex flex-row-reverse mb-5 border">
-            <img src="assets/images/rover_spirit_avatar.jpg" class="col-4">
-            <div id="spirit-text" class="d-flex flex-column align-items-end me-3">
-                <h3 id="spirit-title">Spirit</h3>
-                <p id="spirit-summary" class="text-end">Spirit info here.</p>
-                <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
-            </div>
-        </card>
-        <!-- OPPORTUNITY -->
-        <card id="opportunity-card" class="d-flex flex-row mb-5 border">
-            <img src="assets/images/rover_opportunity_avatar.jpg" class="col-4">
-            <div id="opportunity-text" class="d-flex flex-column align-items-start ms-3">
-                <h3 id="opportunity-title">Opportunity</h3>
-                <p id="opportunity-summary">Opportunity info here.</p>
-                <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
-            </div>
-        </card>
+            <h2>Rover Bio</h2>
+            <!-- CURIOSITY -->
+            <card id="curiosity-card" class="d-flex flex-row mb-5 border">
+                <img src="assets/images/rover_curiosity_avatar.jpg" class="col-4">
+                <div id="curiosty-text" class="ms-3">
+                    <h3 id="curiosity-title">Curiosity</h3>
+                    <p id="curiosity-summary">Curiosity info here.</p>
+                    <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
+                </div>
+            </card>
+            <!-- SPIRIT -->
+            <card id="spirit-card" class="d-flex flex-row-reverse mb-5 border">
+                <img src="assets/images/rover_spirit_avatar.jpg" class="col-4">
+                <div id="spirit-text" class="d-flex flex-column align-items-end me-3">
+                    <h3 id="spirit-title">Spirit</h3>
+                    <p id="spirit-summary" class="text-end">Spirit info here.</p>
+                    <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
+                </div>
+            </card>
+            <!-- OPPORTUNITY -->
+            <card id="opportunity-card" class="d-flex flex-row mb-5 border">
+                <img src="assets/images/rover_opportunity_avatar.jpg" class="col-4">
+                <div id="opportunity-text" class="d-flex flex-column align-items-start ms-3">
+                    <h3 id="opportunity-title">Opportunity</h3>
+                    <p id="opportunity-summary">Opportunity info here.</p>
+                    <a href="#rover-map-section" class="btn btn-primary">Learn More</a>
+                </div>
+            </card>
+        </section>
 
 
         <!-- This section displays a map for the chosen rover.
         The map will be overlaid with buttons to select Sol date-->
-        </section>
         <section id="rover-map-section" class="mb-5">
-            <h2>Rover Map</h2>
-            <img id="placeholder-map" src="assets/images/rover_curiosity_map.jpg" class="w-100">
+            <h2>Search</h2>
+            <!-- <img id="placeholder-map" src="assets/images/rover_curiosity_map.jpg" class="w-100"> -->
+
+            <!-- Placeholder Image Search -->
+            <div class="d-flex">
+
+                <select id="rover-select" class="form-select">
+                    <option selected>Select a Rover</option>
+                    <option value="curiosity">Curiosity</option>
+                    <option value="opportunity">Opportunity</option>
+                    <option value="spirit">Spirit</option>
+                </select>
+
+                <input id="rover-sol-input" class="form-control form-control-lg" type="text" placeholder="sol date">
+
+                <select id="rover-cam-select" class="form-select">
+                    <option selected>Select a Camera</option>
+                    <option value="FHAZ">Front Hazard Avoidance</option>
+                    <option value="RHAZ">Rear Hazard Avoidance</option>
+                    <option value="NAVCAM">Navigation Camera</option>
+                    <option value="MAST">Mast (Cur)</option>
+                    <option value="CHEMCAM">Chemistry (Cur)</option>
+                    <option value="MAHLI">Hand Lens (Cur)</option>
+                    <option value="MARDI">Descent (Cur)</option>
+                    <option value="PANCAM">Panorama (Opp & Spr)</option>
+                    <option value="MINITES">Thermal (Opp & Spr)</option>
+
+                </select>
+
+                <button id="rover-search" type="button" class="btn btn-warning">Search</button>
+
+            </div>
         </section>
 
 
         <!-- This section will display photos from the selected Sol date.
         Photos should be labeled with their respective cameras. -->
         <section id="rover-gallery-section" class="mb-5">
-            <h2>Rover Gallery</h2>
+            <h2>Gallery</h2>
             <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5">
 
                 <div id="rover-placeholder-image" class="card" style="width: 20rem;">
@@ -94,24 +124,7 @@
                         <p class="card-text">Image: Camera</p>
                     </div>
                 </div>
-                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
-                    <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Image: Camera</p>
-                    </div>
-                </div>
-                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
-                    <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Image: Camera</p>
-                    </div>
-                </div>
-                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
-                    <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Image: Camera</p>
-                    </div>
-                </div>
+
 
             </div>
         </section>
@@ -128,8 +141,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
+    <!-- JQuery  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Script -->
+    <script src="./assets/js/rover.js"></script>
 </body>
 
 </html>
