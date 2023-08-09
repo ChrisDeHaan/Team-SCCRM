@@ -11,6 +11,7 @@ galleryEl = $('#rover-gallery-display');
 roverSelectEl = $('#rover-select')
 cameraSelectEl = $('#rover-cam-select')
 solDateEl = $('#rover-sol-input')
+searchButtonEl = $('#rover-search')
 
 // ELEMENT TEMPLATES
 galleryCardEl = `<div id="rover-image-card" class="card" style="width: 20rem;">
@@ -22,20 +23,16 @@ galleryCardEl = `<div id="rover-image-card" class="card" style="width: 20rem;">
 
 // API CALL
 
-$(document).ready(function () {
-
-    fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/
-    curiosity/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=1000`)
+function fetchRover() {
+    fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverSelectEl.val()}/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=${solDateEl.val()}&camera=${cameraSelectEl.val()}`)
         .then(response => {
             return response.json();
         })
         .then(response => {
-            console.log(response.photos[0].img_src);
             galleryEl.empty();
 
-            console.log(response.photos)
+            // A card is created for each photo in the response
             for (var i = 0; i < response.photos.length; i++) {
-                console.log(response.photos[i].img_src);
                 galleryEl.append(`
                 <div id="rover-image-card" class="card" style="width: 20rem;">
                     <img src="${response.photos[i].img_src}" class="card-img-top">
@@ -45,4 +42,13 @@ $(document).ready(function () {
                 </div>`)
             }
         })
+}
+
+
+
+
+$(document).ready(function () {
+
+    searchButtonEl.on('click', fetchRover)
+
 })
