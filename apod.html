@@ -5,72 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCCRM | APOD</title>
-    
+
     <link rel="stylesheet" href="assets/css/cam.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/apod.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo-container"> 
+        <div class="logo-container">
             <img src="assets/images/image_720.png" class="logo-container img" alt="logo goes here">
         </div>
-        <nav id="navbar"class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid ml-auto">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse bg-dark" id="navbarNavAltMarkup">
-                <div id="navbar" class="navbar-nav ml-auto">
-                  <a id="navlinks"class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  <a id="navlinks"class="nav-link" href="mars-rover.html">Mars Rover</a>
-                  <a id="navlinks"class="nav-link" href="apod.html">APOD</a>
-                  <a id="navlinks"class="nav-link" href="developed-by.html">Developed By</a>
-                  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-dark" id="navbarNavAltMarkup">
+                    <div id="navbar" class="navbar-nav ml-auto">
+                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </nav>
+        </nav>
     </header>
 
-    <h1 class="text-center">Astronomy Picture of the Day</h1>
-    <!-- apod below -->
-    <div class="row col-10 mx-auto">
-        <div class="col">
-            <img src="https://apod.nasa.gov/apod/image/2307/noirlab2321a_ngc1532.jpg" alt="example pic" class="img-fluid">
+    <main style="max-width: 1440px;" class="mx-auto row justify-content-center">
+        <h1 class="text-center bg-custom col-10 mt-4 shadow display-6 rounded">Astronomy Picture of the Day</h1>
+        <!-- apod below -->
+        <div class="row col-10 mx-auto my-2">
+            <div class="col">
+                <img src="https://apod.nasa.gov/apod/image/2307/noirlab2321a_ngc1532.jpg" alt="example pic"
+                    class="img-fluid border-custom">
+            </div>
         </div>
-    </div>
-    <!-- div to present name of image -->
-    <div class="text-center">
-        <p>- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illum natus eius animi neque labore id nesciunt ullam maxime rem.</p>
-    </div>
-
-    <!-- div for buttons that interact with apod -->
-    <div class="text-center">this will contain the drop down lists and buttons</div>
-
-    <!-- paragraph explaining apod, its' history, what the user can do? -->
-    <div class="m-2 p-2">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ipsum iste, corporis vel repudiandae nostrum
-        excepturi. Quod inventore nihil provident praesentium reiciendis, quaerat eveniet aliquid magnam eligendi
-        recusandae nesciunt ab animi aliquam architecto natus aut molestiae pariatur rem esse quibusdam tenetur
-        consequatur vero debitis. Maiores, magnam sit dolor officia voluptatem consequuntur accusamus, nesciunt
-        praesentium recusandae consequatur fugiat voluptatibus voluptas dignissimos laboriosam odio soluta veniam dolore
-        cupiditate adipisci doloribus. Tempore in voluptatibus, culpa necessitatibus voluptate cupiditate ab! Libero,
-        repellat veniam.
-    </div>
-
-    <!-- gallery where users can save images -->
-    <div>
-        <h2 class="text-center">Gallery</h2>
+        <!-- div to present name of image -->
         <div class="text-center">
-            pictures go here
+            <p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit illum natus eius animi neque labore id
+                nesciunt ullam maxime rem.</p>
         </div>
-    </div>
+
+        <!-- div for buttons that interact with apod -->
+        <div class="text-center">this will contain the drop down lists and buttons</div>
+
+        <!-- paragraph explaining apod, its' history, what the user can do? -->
+        <div class="m-2 p-2 col-10">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ipsum iste, corporis vel repudiandae nostrum
+            excepturi. Quod inventore nihil provident praesentium reiciendis, quaerat eveniet aliquid magnam eligendi
+            recusandae nesciunt ab animi aliquam architecto natus aut molestiae pariatur rem esse quibusdam tenetur
+            consequatur vero debitis. Maiores, magnam sit dolor officia voluptatem consequuntur accusamus, nesciunt
+            praesentium recusandae consequatur fugiat voluptatibus voluptas dignissimos laboriosam odio soluta veniam
+            dolore
+            cupiditate adipisci doloribus. Tempore in voluptatibus, culpa necessitatibus voluptate cupiditate ab!
+            Libero,
+            repellat veniam.
+        </div>
+
+        <!-- gallery where users can save images -->
+        <div class="row justify-content-center">
+            <h2 class="text-center bg-custom col-5 col-md-3 py-1 my-3 display-6 rounded shadow">Gallery</h2>
+            <div class="row text-center col-12 col-md-10 rounded py-2">
+                <div class="col-12 col-md-6 mx-auto my-3">
+                    <a href="./assets/images/placeholder.png">
+                        <img src="./assets/images/placeholder.png" class="w-100 border-custom">
+                    </a>
+                    <figcaption class="mt-2">This is a placeholder image</figcaption>
+                </div>
+                <div class="col-12 col-md-6 mx-auto my-3">
+                    <a href="./assets/images/placeholder.png">
+                        <img src="./assets/images/placeholder.png" class="w-100 border-custom">
+                    </a>
+                    <figcaption class="mt-2">This is a placeholder image</figcaption>
+                </div>
+                <div class="col-12 col-md-6 mx-auto my-3">
+                    <a href="./assets/images/placeholder.png">
+                        <img src="./assets/images/placeholder.png" class="w-100 border-custom">
+                    </a>
+                    <figcaption class="mt-2">This is a placeholder image</figcaption>
+                </div>
+                <div class="col-12 col-md-6 mx-auto my-3">
+                    <a href="./assets/images/placeholder.png">
+                        <img src="./assets/images/placeholder.png" class="w-100 border-custom">
+                    </a>
+                    <figcaption class="mt-2">This is a placeholder image</figcaption>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer class="row">
         <div class="col-md-8 mx-auto py-3 text-center">
-            <a href="https://github.com/ChrisDeHaan/Team-SCCRM" target="_blank"><img src="./assets/images/GitHub-Logo.png" style="height: 50px; width: 90px;" alt="GitHub link to site repo"></a>
+            <a href="https://github.com/ChrisDeHaan/Team-SCCRM" target="_blank"><img
+                    src="./assets/images/GitHub-Logo.png" style="height: 50px; width: 90px;"
+                    alt="GitHub link to site repo"></a>
         </div>
     </footer>
 
