@@ -13,16 +13,6 @@ cameraSelectEl = $('#rover-cam-select')
 solDateEl = $('#rover-sol-input')
 searchButtonEl = $('#rover-search')
 
-// CAMERA ARRAYS
-                // Perseverance Cameras
-const psvCam = [];
-                // Curiosity Cameras
-const curCam = [];
-                // Opportunity Cameras
-const oppCam = [];
-                // Spirit Cameras
-const sprCam = [];
-
 // API CALL
 function searchRover() {
 

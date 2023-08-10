@@ -75,7 +75,7 @@
 
 
         <!-- This section contains search controls for the rover images -->
-        <section id="rover-search-section" class="mb-5">
+        <section id="rover-search-section" class="mb-5 p-2 bg-black">
             <h2>Search</h2>
             <div class="d-flex">
                 <!-- Note to self: It's spelled "Perseverance" -->
@@ -86,27 +86,13 @@
                     <option value="opportunity">Opportunity</option>
                     <option value="spirit">Spirit</option>
                 </select>
-
                 <input id="rover-sol-input" class="form-control form-control-lg" type="text" placeholder="sol date">
-
-                <select id="rover-cam-select" class="form-select">
-                    <option selected>Select a Camera</option>
-                    <option value="FHAZ">Front Hazard Avoidance</option>
-                    <option value="RHAZ">Rear Hazard Avoidance</option>
-                    <option value="NAVCAM">Navigation Camera</option>
-                    <option value="MAST">Mast (Cur)</option>
-                    <option value="CHEMCAM">Chemistry (Cur)</option>
-                    <option value="MAHLI">Hand Lens (Cur)</option>
-                    <option value="MARDI">Descent (Cur)</option>
-                    <option value="PANCAM">Panorama (Opp & Spr)</option>
-                    <option value="MINITES">Thermal (Opp & Spr)</option>
-                    <option value="MCZ_RIGHT">Mast Right (Psv)</option>
-                    <option value="MCZ_LEFT">Mast Left (Psv)</option>
-                </select>
-
                 <button id="rover-search" type="button" class="btn btn-warning">Search</button>
-
             </div>
+            <h3>Filter by Camera</h3>
+            <select id="rover-cam-select" class="form-select">
+                <option value="">Select a Camera</option>
+            </select>
         </section>
 
 
