@@ -18,10 +18,9 @@ function searchRover() {
 
     // The Mars Rover API is called with query parameters set by user-selected options on the page.
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverSelectEl.val()}/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=${solDateEl.val()}&camera=${cameraSelectEl.val()}`)
+        .then(response => {return response.json();})
         .then(response => {
-            return response.json();
-        })
-        .then(response => {
+            console.log(response);
 
             // The image gallery is emptied for repopulation.
             galleryEl.empty();
@@ -40,11 +39,19 @@ function searchRover() {
         })
 }
 
+function testPsv() {
+    fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=1`)
+        .then(response => {return response.json()})
+        .then(response => {
+            console.log(response)
+        })
+}
+
 
 
 
 $(document).ready(function () {
-
+    testPsv()
     searchButtonEl.on('click', searchRover)
 
 })
