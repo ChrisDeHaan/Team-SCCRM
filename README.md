@@ -43,6 +43,7 @@ https://chrisdehaan.github.io/Team-SCCRM/
 - <a href="https://developer.mozilla.org/en-US/">MDN web docs</a>
 - <a href ="https://www.w3schools.com/">w3 schools</a>
 - <a href ="https://api.nasa.gov/">NASA API wesbite</a>
+- <a href ="https://stackoverflow.com/questions/10805125/how-to-remove-all-line-breaks-from-a-string">Removing line breaks from a string</a>
 
 ## License
 
