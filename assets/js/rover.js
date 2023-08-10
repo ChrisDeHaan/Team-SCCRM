@@ -39,19 +39,8 @@ function searchRover() {
         })
 }
 
-function testPsv() {
-    fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=1`)
-        .then(response => {return response.json()})
-        .then(response => {
-            console.log(response)
-        })
-}
-
-
-
 
 $(document).ready(function () {
-    testPsv()
     searchButtonEl.on('click', searchRover)
 
 })
