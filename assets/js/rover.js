@@ -20,11 +20,15 @@ function searchRover() {
     fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverSelectEl.val()}/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=${solDateEl.val()}`)
         .then(response => {return response.json();})
         .then(response => {
-            photos = response.photos
-            console.log(response.photos);
-            console.log(response)
-            // The image gallery is emptied for repopulation.
+            photos = response.photos;
+            cameras = photos[0].rover.cameras;
+            cameraSelectEl.empty();
             galleryEl.empty();
+
+            // Cameras for the currently selected rover are added to a dropdown menu
+            for (var i = 0; i < cameras.length; i++) {
+                cameraSelectEl.append(`<option value=${cameras[i].name}>${cameras[i].full_name}</option>`)
+            }
 
             // A card is created for each photo in the response
             // and added to the gallery.
