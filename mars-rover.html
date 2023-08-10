@@ -89,10 +89,13 @@
                 <input id="rover-sol-input" class="form-control form-control-lg" type="text" placeholder="sol date">
                 <button id="rover-search" type="button" class="btn btn-warning">Search</button>
             </div>
-            <h3>Filter by Camera</h3>
-            <select id="rover-cam-select" class="form-select">
-                <option value="">Select a Camera</option>
-            </select>
+            <div id="rover-cam-filter" class="d-none">
+                <h3>Filter by Camera</h3>
+                <select id="rover-cam-select" class="form-select">
+                    <option>Select a Camera</option>
+                </select>
+            </div>
+
         </section>
 
 
@@ -100,9 +103,9 @@
         Photos should be labeled with their respective cameras. -->
         <section id="rover-gallery-section" class="mb-5">
             <h2>Gallery</h2>
-            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5">
+            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5 overflow-auto" style="height: 900px;">
 
-                <div id="rover-placeholder-image" class="card" style="width: 20rem;">
+                <div id="rover-placeholder-image" class="card" style="height: 50%; width: 20rem;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>

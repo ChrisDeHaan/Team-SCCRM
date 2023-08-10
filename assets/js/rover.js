@@ -12,6 +12,7 @@ roverSelectEl = $('#rover-select')
 cameraSelectEl = $('#rover-cam-select')
 solDateEl = $('#rover-sol-input')
 searchButtonEl = $('#rover-search')
+camFilterEl = $('#rover-cam-filter')
 
 // API CALL
 function searchRover() {
@@ -26,6 +27,7 @@ function searchRover() {
             galleryEl.empty();
 
             // Cameras for the currently selected rover are added to a dropdown menu
+            camFilterEl.removeClass('d-none');
             for (var i = 0; i < cameras.length; i++) {
                 cameraSelectEl.append(`<option value=${cameras[i].name}>${cameras[i].full_name}</option>`)
             }
@@ -50,14 +52,3 @@ $(document).ready(function () {
     searchButtonEl.on('click', searchRover)
 
 })
-
-// camera: {id: 20, name: 'FHAZ', rover_id: 5, full_name: 'Front Hazard Avoidance Camera'}
-// earth_date: "2015-05-30"
-// id: 102693
-// img_src: "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG"
-// rover: {id: 5, 
-//         name: 'Curiosity', 
-//         landing_date: '2012-08-06', 
-//         launch_date: '2011-11-26', 
-//         status: 'active',}
-// sol: 1000
