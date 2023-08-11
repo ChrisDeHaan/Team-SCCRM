@@ -2,42 +2,43 @@ body{
     width: 99%;
 }
 #logo {
-    width: 5%;
+    width: 30%;
+    height: 20%;
   
   }
   
   #navbar {
       margin-left: auto;
+    padding-top: 0;
     
   
   }
   
   #navlinks {
       color: aliceblue;
+      margin-right: 20px;
+      font-size: 20px;
    
   }
   
   #navlinks:hover {
       color: rgb(137, 185, 185);
   }
-  .logo-container {
-    /* text-align: left; */
-    /* Center the logo horizontally */
-   
-    /* Add space at the top if needed */
-    background-color: #f0f0f0;
-    /* Add a background color to create a banner effect */
-    padding: 5px 0;
-    /* Add padding to the top and bottom of the banner */
+ 
+.logo-container{
+    display: flex;
+    flex-wrap: nowrap;
+    
 }
+#team{
+    padding-top: 42px;
+    color: rgb(99, 209, 236);
+    font-size: 50px;
 
-.logo-container img {
-    /* display: inline-flex; */
-    /* Make the image a block element to center it within the banner */
-    margin-left: 15px;
-    /* Center the image horizontally within the banner */
-    width: 50px;
-    /* Adjust the width as needed */
-    /* height: auto; */
-    /* Maintain aspect ratio */
+}
+#SCCRM{
+    padding-top: 42px;
+    padding-left: 2%;
+    color: rgb(171, 65, 180);
+    font-size: 50px;
 }
