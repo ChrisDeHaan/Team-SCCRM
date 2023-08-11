@@ -19,20 +19,22 @@ function fetchRoverPhotos(rover, solDate) {
 
     return fetch(apiUrl)
         .then(response => response.json())
-        .then(data => data.photos)
+        .then(data => {
+            console.log(data);
+            return data.photos
+        })
 }
 
 // CAMERA MANIFEST API CALL
-function fetchCameraManifest(rover, sol) {
+function fetchCameraManifest(rover, solDate) {
     const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
     const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`;
 
     return fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            // The camera list is returned from the mission manifest
-            const cameraList = data.photo_manifest.photos[sol].cameras
-            console.log(cameraList);
+            const manifestEntry = data.photo_manifest.photos.find(photo => photo.sol == solDate);
+            const cameraList = manifestEntry.cameras;
             return cameraList;
         });
 }
@@ -63,13 +65,16 @@ function createImageCards(photos) {
 }
 
 $(document).ready(function() {
+
     searchButtonEl.on('click', function() {
-        fetchRoverPhotos(roverSelectEl.val(), solDateEl.val())
+        rover = roverSelectEl.val();
+        solDate = solDateEl.val();
+        fetchRoverPhotos(rover, solDate)
             .then(photos => {
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
             });
-        fetchCameraManifest(roverSelectEl.val(), solDateEl.val())
+        fetchCameraManifest(rover, solDate)
             .then(cameraList => {
                 updateCameraSelect(cameraList)
             })
