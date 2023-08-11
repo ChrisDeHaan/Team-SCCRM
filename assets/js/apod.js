@@ -54,7 +54,7 @@ function randomDayCall (api) {
     })
 }
 
-var apodDiv = document.getElementById('randomClickApi')
+var apodDiv = document.getElementById('currentApodImg')
 apodDiv.addEventListener("click", () => {
     randomDayCall(randomDayApod)
 })

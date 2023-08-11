@@ -3,6 +3,7 @@
     --dark-grey: rgb(41, 40, 40);
     --grey: rgb(101, 100, 100);
     --light-grey: grey;
+    --off-white: rgb(227, 226, 226)
 }
 
 body {
@@ -21,10 +22,30 @@ body {
     border-radius: 3%;
 }
 
-#randomClickApi:hover {
+#currentApodImg {
     cursor: pointer;
 }
 
 .justifyMe {
     text-align: justify;
 }
+
+#year-select {
+    margin: 0;
+    /* background-image: linear-gradient( rgb(208, 119, 225), rgb(41, 10, 67)); */
+}
+
+.border-select-custom {
+    border: 3px solid var(--dark-grey);
+    background-color: var(--off-white);
+}
+
+.border-select-custom:focus {
+    border: 3px solid rgb(31, 227, 239)
+}
+
+.btn-apod-custom {
+    border: 3px solid var(--dark-grey);
+    background-color: rgb(103, 30, 103);
+    margin: 0 20px;
+} 
