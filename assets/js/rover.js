@@ -12,7 +12,7 @@ solDateEl = $('#rover-sol-input')
 searchButtonEl = $('#rover-search')
 camFilterEl = $('#rover-cam-filter')
 
-// API CALL
+// PHOTO API CALL
 function fetchRoverPhotos(rover, solDate) {
     const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
     const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${apiKey}&sol=${solDate}`;
@@ -22,12 +22,27 @@ function fetchRoverPhotos(rover, solDate) {
         .then(data => data.photos)
 }
 
+// CAMERA MANIFEST API CALL
+function fetchCameraManifest(rover, sol) {
+    const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
+    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`;
+
+    return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // The camera list is returned from the mission manifest
+            const cameraList = data.photo_manifest.photos[sol].cameras
+            console.log(cameraList);
+            return cameraList;
+        });
+}
+
 // The camera select dropdown is populated with cameras from the current rover's mission manifest
 function updateCameraSelect(cameras) {
     cameraSelectEl.empty()
     cameraSelectEl.append(`<option>Select a Camera</option>`)
     cameras.forEach(camera => {
-        cameraSelectEl.append(`<option value="${camera.name}">${camera.full_name}</option>`)
+        cameraSelectEl.append(`<option value="${camera}">${camera}</option>`)
     });
 }
 
@@ -49,13 +64,15 @@ function createImageCards(photos) {
 
 $(document).ready(function() {
     searchButtonEl.on('click', function() {
-        
         fetchRoverPhotos(roverSelectEl.val(), solDateEl.val())
             .then(photos => {
-                updateCameraSelect(photos[0].rover.cameras);
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
             });
+        fetchCameraManifest(roverSelectEl.val(), solDateEl.val())
+            .then(cameraList => {
+                updateCameraSelect(cameraList)
+            })
     });
 
     // Gallery is filtered based on currently selected camera
