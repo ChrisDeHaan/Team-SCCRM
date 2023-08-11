@@ -53,7 +53,7 @@ function createImageCards(photos) {
     galleryEl.empty();
     photos.forEach(photo => {
         galleryEl.append(`
-            <div id="rover-image-card" data-camera="${photo.camera.name}" class="rover-image-card card h-50" style="width: 20rem; height: 50%">
+            <div id="rover-image-card" data-camera="${photo.camera.name}" class="rover-image-card card h-50" style="width: 18rem; height: 50%">
                 <img src="${photo.img_src}" class="card-img-top" style="object-fit: cover; overflow: auto;">
                     <div class="card-body">
                         <p id="card-camera" class="card-text">Camera: ${photo.camera.name}</p>
