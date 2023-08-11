@@ -13,31 +13,32 @@
 </head>
 
 <body>
-
     <header>
-        <div class="logo-container">
-            <img src="assets/images/image_720.png" class="logo-container img" alt="logo goes here">
-        </div>
-        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid ml-auto">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-dark" id="navbarNavAltMarkup">
-                    <div id="navbar" class="navbar-nav ml-auto">
-                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
-                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
-                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
-
+        <nav id="navbar" class="navbar navbar-expand-lg ">
+            <a class="navbar-brand" href="developed-by.html">
+              <div class="logo-image logo-container">
+                    <img src="assets/images/image_720.png" class="img-fluid" id="logo">
+                    <p id="team">Team </p> 
+                    <p id="SCCRM">SCCRM</p>
                     </div>
-                </div>
+            </a>
+            <div class="container-fluid ">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+              <div id="navbar" class="navbar-nav ml-auto">
+                <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+    
+              </div>
             </div>
+          </div>
         </nav>
-    </header>
-
+      </header>
     <main style="max-width: 1440px;" class="mx-auto row justify-content-center">
         <h1 class="text-center bg-custom col-10 mt-4 shadow display-6 rounded">Astronomy Picture of the Day</h1>
         <!-- apod below -->
