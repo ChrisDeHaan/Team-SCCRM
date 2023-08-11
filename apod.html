@@ -16,37 +16,58 @@
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg ">
             <a class="navbar-brand" href="developed-by.html">
-              <div class="logo-image logo-container">
+                <div class="logo-image logo-container">
                     <img src="assets/images/image_720.png" class="img-fluid" id="logo">
-                    <p id="team">Team </p> 
+                    <p id="team">Team </p>
                     <p id="SCCRM">SCCRM</p>
-                    </div>
+                </div>
             </a>
             <div class="container-fluid ">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-              <div id="navbar" class="navbar-nav ml-auto">
-                <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
-                <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
-                <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
-                <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
-    
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div id="navbar" class="navbar-nav ml-auto">
+                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+
+                    </div>
+                </div>
             </div>
-          </div>
         </nav>
-      </header>
+    </header>
+
     <main style="max-width: 1440px;" class="mx-auto row justify-content-center">
         <h1 class="text-center bg-custom col-10 mt-4 shadow display-6 rounded">Astronomy Picture of the Day</h1>
+
+        <!-- div for an explanation of APOD -->
+        <section class="col-10 my-3">
+            <p class="justifyMe">
+                APOD, Astronomy Picture of the Day, is originated, written, coordinated, and edited since 1995 by Robert
+                Nemiroff and Jerry Bonnell. The APOD archive contains the largest collection of annotated astronomical
+                images on the internet. This page is to help you find and save some of your favorites, or just explore
+                the wonder of the cosmos!
+            </p>
+            <p class="justifyMe">
+                Below you'll find a search bar to help you locate images, a date displaying which particular APOD you're
+                looking at, an image, a title, and an explanation of the image featured. If you'd like a less curated
+                approach, go wild and try clicking the image! Who knows what you'll get? Adventure!
+            </p>
+        </section>
+
+        <!-- div for buttons that interact with apod -->
+        <div class="text-center bg-custom col-10">this will contain the drop down lists and buttons</div>
+
         <!-- apod below -->
         <div class="row col-10 mx-auto my-2">
             <div class="fs-3 text-center" id="currentApodDate">Date</div>
             <div class="col-12" id="randomClickApi">
-                    <img src="./assets/images/404.jpg" alt="Astronomy Picture of the Day"
-                        class="img-fluid border-custom" id="currentApodImg">
+                <img src="./assets/images/404.jpg" alt="Astronomy Picture of the Day" class="img-fluid border-custom"
+                    id="currentApodImg">
             </div>
         </div>
         <!-- div to present name of image -->
@@ -55,11 +76,8 @@
             <p class="fst-italic" id="currentApodCopyright"></p>
         </div>
 
-        <!-- div for buttons that interact with apod -->
-        <div class="text-center">this will contain the drop down lists and buttons</div>
-
-        <!-- paragraph explaining apod, its' history, what the user can do? -->
-        <div class="m-2 p-2 col-10 justify" id="explanationApod">
+        <!-- div for explanation of image above -->
+        <div class="m-2 p-2 col-10 justifyMe" id="explanationApod">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ipsum iste, corporis vel repudiandae nostrum
             excepturi. Quod inventore nihil provident praesentium reiciendis, quaerat eveniet aliquid magnam eligendi
             recusandae nesciunt ab animi aliquam architecto natus aut molestiae pariatur rem esse quibusdam tenetur
