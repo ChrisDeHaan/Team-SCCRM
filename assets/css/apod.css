@@ -24,3 +24,7 @@ body {
 #randomClickApi:hover {
     cursor: pointer;
 }
+
+.justifyMe {
+    text-align: justify;
+}
