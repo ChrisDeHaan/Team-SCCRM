@@ -3,8 +3,6 @@
 // MARS ROVER PAGE //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// API KEY
-// kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr
 
 // ELEMENTS
 galleryEl = $('#rover-gallery-display');
@@ -14,58 +12,58 @@ solDateEl = $('#rover-sol-input')
 searchButtonEl = $('#rover-search')
 camFilterEl = $('#rover-cam-filter')
 
-
 // API CALL
-function searchRover() {
+function fetchRoverPhotos(rover, solDate) {
+    const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
+    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${apiKey}&sol=${solDate}`;
 
-    // The Mars Rover API is called with query parameters set by user-selected options on the page.
-    fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverSelectEl.val()}/photos?api_key=kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr&sol=${solDateEl.val()}`)
-        .then(response => {return response.json();})
-        .then(response => {
-            console.log(response)
-            photos = response.photos;
-            cameras = photos[0].rover.cameras;
-            cameraSelectEl.empty();
-            galleryEl.empty();
-
-            // Cameras for the currently selected rover are added to a dropdown menu
-            camFilterEl.removeClass('d-none');
-            cameraSelectEl.append(`<option>Select a Camera</option>`)
-            for (var i = 0; i < cameras.length; i++) {
-                cameraSelectEl.append(`<option value=${cameras[i].name}>${cameras[i].full_name}</option>`)
-            }
-
-            // A card is created for each photo in the response
-            // and added to the gallery.
-            for (var i = 0; i < photos.length; i++) {
-                galleryEl.append(`
-                <div id="rover-image-card" data-camera="${photos[i].camera.name}" class="rover-image-card card" style="width: 20rem;">
-                    <img src="${photos[i].img_src}" class="card-img-top">
-                        <div class="card-body">
-                            <p id="card-camera" class="card-text">Camera: ${photos[i].camera.name}</p>
-                            <p class="card-text">Earth Date: ${photos[i].earth_date}</p>
-                        </div>
-                </div>`)
-                
-            }
-        })
+    return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => data.photos)
 }
 
+// The camera select dropdown is populated with cameras from the current rover's mission manifest
+function updateCameraSelect(cameras) {
+    cameraSelectEl.empty()
+    cameraSelectEl.append(`<option>Select a Camera</option>`)
+    cameras.forEach(camera => {
+        cameraSelectEl.append(`<option value="${camera.name}">${camera.full_name}</option>`)
+    });
+}
 
+// An image card is created and labeled for each photo in the return
+function createImageCards(photos) {
+    galleryEl.empty();
+    photos.forEach(photo => {
+        galleryEl.append(`
+            <div id="rover-image-card" data-camera="${photo.camera.name}" class="rover-image-card card h-50" style="width: 20rem; height: 50%">
+                <img src="${photo.img_src}" class="card-img-top" style="object-fit: cover; overflow: auto;">
+                    <div class="card-body">
+                        <p id="card-camera" class="card-text">Camera: ${photo.camera.name}</p>
+                        <p class="card-text">Earth Date: ${photo.earth_date}</p>
+                    </div>
+            </div>
+        `);
+    });
+}
 
-$(document).ready(function () {
+$(document).ready(function() {
+    searchButtonEl.on('click', function() {
+        
+        fetchRoverPhotos(roverSelectEl.val(), solDateEl.val())
+            .then(photos => {
+                updateCameraSelect(photos[0].rover.cameras);
+                createImageCards(photos);
+                camFilterEl.removeClass('d-none');
+            });
+    });
 
-    searchButtonEl.on('click', searchRover)
-
+    // Gallery is filtered based on currently selected camera
     cameraSelectEl.on('input', function() {
-        selectedFilter = $(this).children('option:selected').val()
+        const selectedFilter = $(this).children('option:selected').val();
         $('.rover-image-card').each(function() {
-            cardCamera = $(this).data('camera');
-            if (cardCamera === selectedFilter) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        })
-    })
-})
+            const cardCamera = $(this).data('camera');
+            $(this).toggle(cardCamera === selectedFilter);
+        });
+    });
+});
