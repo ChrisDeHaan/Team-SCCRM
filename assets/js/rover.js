@@ -65,7 +65,6 @@ function createImageCards(photos) {
 }
 
 $(document).ready(function() {
-
     searchButtonEl.on('click', function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
@@ -79,7 +78,6 @@ $(document).ready(function() {
                 updateCameraSelect(cameraList)
             })
     });
-
     // Gallery is filtered based on currently selected camera
     cameraSelectEl.on('input', function() {
         const selectedFilter = $(this).children('option:selected').val();
