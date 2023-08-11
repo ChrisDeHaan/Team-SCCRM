@@ -65,7 +65,6 @@ body{
     @media screen and (max-width: 376px) {
         #navBtn{
            width: 20px;
-           a;
         }
         #navToggle{
             position: fixed;
