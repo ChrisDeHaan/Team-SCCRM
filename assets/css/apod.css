@@ -20,3 +20,7 @@ body {
     border: 8px solid var(--dark-grey);
     border-radius: 3%;
 }
+
+#randomClickApi:hover {
+    cursor: pointer;
+}
