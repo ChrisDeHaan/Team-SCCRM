@@ -3,7 +3,11 @@
     --dark-grey: rgb(41, 40, 40);
     --grey: rgb(101, 100, 100);
     --light-grey: grey;
-    --off-white: rgb(227, 226, 226)
+    --off-white: rgb(227, 226, 226);
+    --dark-purple: rgb(109, 36, 168);
+    --light-purple: rgb(184, 100, 201);
+    --dark-cyan: rgb(18, 118, 123);
+    --cyan: rgb(28, 204, 214);
 }
 
 body {
@@ -44,8 +48,22 @@ body {
     border: 3px solid rgb(31, 227, 239)
 }
 
-.btn-apod-custom {
+.btn-search-custom {
     border: 3px solid var(--dark-grey);
-    background-color: rgb(103, 30, 103);
-    margin: 0 20px;
+    background: linear-gradient(var(--dark-purple) 15%, var(--light-purple)50%, var(--dark-purple)85%);
 } 
+
+.btn-search-custom:hover {
+    transition: 150ms ease-in;
+    border: 3px solid var(--light-purple);
+}
+
+.btn-save-custom {
+    border: 3px solid var(--dark-grey);
+    background: linear-gradient(var(--dark-cyan), var(--cyan), var(--dark-cyan));
+}
+
+.btn-save-custom:hover {
+    transition: 150ms ease-in;
+    border: 3px solid var(--cyan);
+}
