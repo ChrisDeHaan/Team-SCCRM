@@ -52,7 +52,8 @@ monthSelectEl.addEventListener('click', () => { // populates month
         } else { return }
     // second, check for current year
     } else if (yearSelectEl.value === currentYear) {
-        if (monthSelectEl.length !== Number(currentMonthNumbers)) {
+        var tempNum = Number(currentMonthNumbers)+1 // need the length +1 to include the option with 'Month'
+        if (monthSelectEl.length !== Number(tempNum)) {
             dynamicMonths(0, Number(currentMonthNumbers))
         } else { return }
     // all other months will just have all 12 months
