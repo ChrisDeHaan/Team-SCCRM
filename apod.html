@@ -60,64 +60,32 @@
         </section>
 
         <!-- div for buttons that interact with apod -->
-        <div class="text-center bg-custom col-10 container">
+        <div class="text-center bg-custom col-10 container rounded mb-5">
             <div class="row mx-auto">
                 <div class="col-4">
-                    <select id="year-select" class="form-select border-select-custom mt-2 fs-5">
-                        <option selected>Year</option>
-                        <option>2023</option>
-                        <option>2022</option>
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                        <option>2016</option>
-                        <option>2015</option>
-                        <option>2014</option>
-                        <option>2013</option>
-                        <option>2012</option>
-                        <option>2011</option>
-                        <option>2010</option>
-                        <option>2009</option>
-                        <option>2008</option>
-                        <option>2007</option>
-                        <option>2006</option>
-                        <option>2005</option>
-                        <option>2004</option>
-                        <option>2003</option>
-                        <option>2002</option>
-                        <option>2001</option>
-                        <option>2000</option>
-                        <option>1999</option>
-                        <option>1998</option>
-                        <option>1997</option>
-                        <option>1996</option>
-                        <option>1995</option>
+                    <select class="form-select border-select-custom mt-2 fs-5" id="year-select">
+                        <option>Year</option>
                     </select>
                 </div>
                 <div class="col-4">
-                    <select id="year-select" class="form-select border-select-custom mt-2 fs-5" disabled>
+                    <select id="month-select" class="form-select border-select-custom mt-2 fs-5" disabled>
                         <option selected>Month</option>
-                        <option>Jan</option>
-                        <option>Feb</option>
-                        <option>Mar</option>
-                        <option>Apr</option>
+                        <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
+                        <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
+                        <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
                     </select>
                 </div>
                 <div class="col-4">
-                    <select id="year-select" class="form-select border-select-custom mt-2 fs-5" disabled>
-                        <option selected>Day</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select id="day-select" class="form-select border-select-custom mt-2 fs-5" disabled>
+                        <option>Day</option>
                     </select>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <button type="button" class="btn btn btn-search-custom col-5 m-2 text-light fs-4 fw-bold">Search</button>
-                <button type="button" class="btn btn-primary btn-save-custom col-5 m-2 fs-4 fw-bold">Save to Gallery</button>
+                <button type="button"
+                    class="btn btn btn-search-custom col-5 m-2 fs-4 fw-bold" id="search-button" disabled>Search</button>
+                <button type="button" class="btn btn-primary btn-save-custom col-5 m-2 fs-4 fw-bold" id="save-button">Save to
+                    Gallery</button>
             </div>
         </div>
         <!-- apod below -->
@@ -197,6 +165,9 @@
     </footer>
 
     <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/apod.js"></script>
 
 </body>
