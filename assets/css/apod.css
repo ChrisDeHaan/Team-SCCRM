@@ -36,7 +36,7 @@ body {
     cursor: pointer;
 }
 
-/* couldn't find the text-justify in bootstap, so here we go */
+/* couldn't find the text-justify in bootstrap, so here we go */
 .justifyMe {
     text-align: justify;
 }
@@ -67,8 +67,8 @@ body {
 }
 
 .btn-search-custom:disabled {
-    border: 3px solid var(--dark-grey);
-    color: var(--dark-grey);
+    border: 3px solid black;
+    color: var(--almost-black);
     background: var(--grey)
 }
 

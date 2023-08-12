@@ -22,12 +22,13 @@ var apodCopyrightEl = document.getElementById('currentApodCopyright')
 // currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // Event Listeners
-var apodDiv = document.getElementById('currentApodImg') // random day listener
-apodDiv.addEventListener("click", () => {
+var apodDiv = document.getElementById('currentApodImg') // random day listener elements
+
+apodDiv.addEventListener("click", () => { 
     randomDayCall(randomDayApod)
 })
 
-var yearSelectEl = document.getElementById('year-select') // search div listeners
+var yearSelectEl = document.getElementById('year-select') // dropdown/search div listener elements
 var monthSelectEl = document.getElementById('month-select')
 var daySelectEl = document.getElementById('day-select')
 var searchBtnEl = document.getElementById('search-button')
@@ -65,7 +66,7 @@ monthSelectEl.addEventListener('click', () => { // populates month
 })
 
 daySelectEl.addEventListener('click', () => { // populates days
-    // first, check for leap years and populates to 29 days
+    // first, check for leap years
     if (monthSelectEl.value === 'Feb' && (yearSelectEl.value === '2024' || yearSelectEl.value === '2020' ||
         yearSelectEl.value === '2016' || yearSelectEl.value === '2012' || yearSelectEl.value === '2008' ||
         yearSelectEl.value === '2004' || yearSelectEl.value === '2000' || yearSelectEl.value === '1996')) {
@@ -139,6 +140,17 @@ daySelectEl.addEventListener('change', (e) => { // removes/applies disabled attr
     }
 })
 
+searchBtnEl.addEventListener('click', () => { // loads the selected date's APOD
+    console.log('ive been clicked!')
+    var Year = yearSelectEl.value
+    var Day = daySelectEl.value
+    var Month = monthSelectEl.value
+        Month = (monthArray.indexOf(Month)+1).toString(); // need to turn our MMM into MM using its' position in the array
+    console.log (Year, Month, Day)
+    var specificDayApod = `https://api.nasa.gov/planetary/apod?api_key=${apodAPI}&date=${Year}-${Month}-${Day}`
+    currentDayCall(specificDayApod)
+})
+
 function currentDayCall(api) { // function to load the current day's APOD
     fetch(api)
         .then(response => response.json())
@@ -207,9 +219,9 @@ function disableAttrRemove (element) { //function used to remove the disabled at
     element.removeAttribute('disabled')
 }
 // for testing purposes
-// function test (api) {
-//     fetch(api).then(response=>response.json()).then(data=>console.log(data))
-// }
+function test (api) {
+    fetch(api).then(response=>response.json()).then(data=>console.log(data))
+}
 
 // var searchTerm = 'May' (these are likely to be used with the values)
 // var indexValue = testArray.indexOf(searchTerm);
