@@ -18,7 +18,6 @@ var apodExplanationEl = document.getElementById('explanationApod')
 var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
 
-
 // currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // Event Listeners
@@ -141,14 +140,31 @@ daySelectEl.addEventListener('change', (e) => { // removes/applies disabled attr
 })
 
 searchBtnEl.addEventListener('click', () => { // loads the selected date's APOD
-    console.log('ive been clicked!')
     var Year = yearSelectEl.value
     var Day = daySelectEl.value
     var Month = monthSelectEl.value
         Month = (monthArray.indexOf(Month)+1).toString(); // need to turn our MMM into MM using its' position in the array
-    console.log (Year, Month, Day)
     var specificDayApod = `https://api.nasa.gov/planetary/apod?api_key=${apodAPI}&date=${Year}-${Month}-${Day}`
     currentDayCall(specificDayApod)
+})
+
+// variables for save functions
+var savedPicturesStorage = localStorage.getItem('saved-pictures')
+var savedPicturesArray = JSON.parse(savedPicturesStorage) || []
+var imgGalleryEl = document.getElementById('img-Gallery')
+displaySavedImages(savedPicturesArray) // display gallery on page load
+
+saveBtnEl.addEventListener('click', () => {
+    savedPicturesArray.push( {
+            HDUrl: apodImgEl.src,
+            date: apodDateEl.textContent,
+            title: apodTitleEl.textContent,
+            copyright: apodCopyrightEl.textContent,
+        })
+
+    localStorage.setItem('saved-pictures', JSON.stringify(savedPicturesArray))
+
+    displaySavedImages(savedPicturesArray)
 })
 
 function currentDayCall(api) { // function to load the current day's APOD
@@ -159,7 +175,6 @@ function currentDayCall(api) { // function to load the current day's APOD
             apodImgEl.src = data.hdurl
             apodTitleEl.textContent = data.title
             apodExplanationEl.textContent = data.explanation
-            // var url = data.url (we'll be using this for the saved images, i think)
             var copyright = data.copyright
             // if statement for when copyright isn't present in api call
             if (copyright === undefined) {
@@ -180,7 +195,6 @@ function randomDayCall(api) { // function for random APODs
             apodImgEl.src = data[0].hdurl
             apodTitleEl.textContent = data[0].title
             apodExplanationEl.textContent = data[0].explanation
-            // var url = data[0].url (we'll be using this for the saved images, i think)
             var copyright = data[0].copyright
             // if statement for when copyright isn't present in api call
             if (copyright === undefined) {
@@ -215,13 +229,31 @@ function disableAttrAdd (element) { // function used to add the disabled attribu
     element.setAttribute('disabled', '')
 }
 
-function disableAttrRemove (element) { //function used to remove the disabled attribute
+function disableAttrRemove (element) { // function used to remove the disabled attribute
     element.removeAttribute('disabled')
 }
-// for testing purposes
-function test (api) {
-    fetch(api).then(response=>response.json()).then(data=>console.log(data))
+
+function displaySavedImages (array) {
+    imgGalleryEl.innerHTML = '' // reset the Gallery
+    for ( i=0; i < array.length; i++) {
+        imgGalleryEl.innerHTML += `
+        <div class="col-12 col-md-6 mx-auto my-3">
+            <div class="h5">${array[i].date}</div>
+            <a href=${array[i].HDUrl}
+                target="_blank">
+                <img src=${array[i].HDUrl}
+                    class="w-100 border-custom">
+            </a>
+            <figcaption class="mt-2 h4">${array[i].title}</figcaption>
+            <figcaption class="mt-2">${array[i].copyright}</figcaption>
+        </div>
+        `
+    }
 }
 
-// var searchTerm = 'May' (these are likely to be used with the values)
-// var indexValue = testArray.indexOf(searchTerm);
+// for testing purposes
+// function test (api) {
+//     fetch(api).then(response=>response.json()).then(data=>console.log(data))
+// }
+
+// 1-21-2020 is a 404 response
