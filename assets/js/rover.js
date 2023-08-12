@@ -6,11 +6,11 @@
 
 // ELEMENTS
 galleryEl = $('#rover-gallery-display');
-roverSelectEl = $('#rover-select')
-cameraSelectEl = $('#rover-cam-select')
-solDateEl = $('#rover-sol-input')
-searchButtonEl = $('#rover-search')
-camFilterEl = $('#rover-cam-filter')
+roverSelectEl = $('#rover-select');
+cameraSelectEl = $('#rover-cam-select');
+solDateEl = $('#rover-sol-input');
+searchButtonEl = $('#rover-search');
+camFilterEl = $('#rover-cam-filter');
 
 // PHOTO API CALL
 function fetchRoverPhotos(rover, solDate) {
@@ -39,11 +39,11 @@ function fetchCameraManifest(rover, solDate) {
         });
 }
 
-// The camera select dropdown is populated with cameras from the current rover's mission manifest
-function updateCameraSelect(cameras) {
+// The camera select dropdown is populated with cameras from a list
+function updateCameraSelect(cameraList) {
     cameraSelectEl.empty()
     cameraSelectEl.append(`<option>Select a Camera</option>`)
-    cameras.forEach(camera => {
+    cameraList.forEach(camera => {
         cameraSelectEl.append(`<option value="${camera}">${camera}</option>`)
     });
 }
