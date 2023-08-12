@@ -42,7 +42,7 @@
 
         <h1 class="text-center">Mars Rover Image Browser</h1>
         <article class="text-center">This page allows users to search and explore images
-            taken by NASA's Mars rovers.<br> Scroll down to learn more about each rover.
+            taken on NASA's Mars rover missions.<br> Scroll down to learn more about each rover.
         </article>
         <img src="assets/images/rover_red_planet.png" class="d-block mx-auto mb-3 img-fluid">
         
@@ -52,7 +52,7 @@
         <section id=" rover-info-section">
             <h2>Rover Bios</h2>
             <!-- CURIOSITY -->
-            <card id="curiosity-card" class="d-flex flex-row mb-5 border">
+            <card id="curiosity-card" class="d-flex flex-row mb-5 border col-12">
                 <img src="assets/images/rover_curiosity_avatar.jpg" class="col-4">
                 <div id="curiosty-text" class="ms-3">
                     <h3 id="curiosity-title">Curiosity</h3>
@@ -82,7 +82,7 @@
 
 
         <!-- This section contains search controls for the rover images -->
-        <section id="rover-search-section" class="mb-5 p-2 bg-black">
+        <section id="rover-search-section" class="mb-5 p-2 border">
             <h2>Search</h2>
             <div class="d-flex">
                 <!-- Note to self: It's spelled "Perseverance" -->
@@ -106,18 +106,16 @@
 
         <!-- This section will display photos from the selected Sol date.
         Photos should be labeled with their respective cameras. -->
-        <section id="rover-gallery-section" class="mb-5">
+        <section id="rover-gallery-section" class="col-12 mb-5">
             <h2>Gallery</h2>
-            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5 overflow-auto" style="height: 900px;">
-
-                <div id="rover-placeholder-image" class="card overflow-hidden" style="width: 18rem; height: 50%; overflow:auto;">
+            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly col-12 p- overflow-auto" style="height: 900px;">
+                <div id="rover-placeholder-image" class="card overflow-hidden col-12 col-sm-6 col-md-4 col-lg-3" style="height: 50%; overflow:auto;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top overflow-hidden" style="object-fit:cover">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
+                        <p class="card-text">Earth: Date</p>
                     </div>
                 </div>
-
-
             </div>
         </section>
 
