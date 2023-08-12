@@ -15,18 +15,17 @@
 <body>
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg ">
-          <a class="navbar-brand" href="developed-by.html">
-            <div class="logo-image logo-container">
-              <img src="assets/images/logo2" class="img-fluid" id="logo">
-              <!-- <p id="team">Team </p> 
-                        <p id="SCCRM">SCCRM</p> -->
-            </div>
-          </a>
-          <div id="navButtons"class="container-fluid ">
-            <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span id="navBtn"class="navbar-toggler-icon"></span>
+
+            <a class="navbar-brand" href="developed-by.html">
+              <div class="logo-image logo-container">
+                    <img src="assets/images/logo2" class="img-fluid" id="logo">
+                    </div>
+            </a>
+            <div class="container-fluid ">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+
             </button>
             <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
               <div id="navbar" class="navbar-nav ml-auto">
@@ -43,13 +42,19 @@
 
     <main class="mx-auto mt-5 col-12" style="color: white; max-width: 1440px;">
 
-
+        <h1 class="text-center">Mars Rover Image Browser</h1>
+        <article class="text-center">This page allows users to search and explore images
+            taken on NASA's Mars rover missions.<br> Scroll down to learn more about each rover.
+        </article>
+        <img src="assets/images/rover_red_planet.png" class="d-block mx-auto mb-3 img-fluid">
+        
+            
         <!-- This section contains cards for each rover.
         Cards contain a photo, name, and article. -->
         <section id=" rover-info-section">
-            <h2>Rover Bio</h2>
+            <h2>Rover Bios</h2>
             <!-- CURIOSITY -->
-            <card id="curiosity-card" class="d-flex flex-row mb-5 border">
+            <card id="curiosity-card" class="d-flex flex-row mb-5 border col-12">
                 <img src="assets/images/rover_curiosity_avatar.jpg" class="col-4">
                 <div id="curiosty-text" class="ms-3">
                     <h3 id="curiosity-title">Curiosity</h3>
@@ -79,7 +84,7 @@
 
 
         <!-- This section contains search controls for the rover images -->
-        <section id="rover-search-section" class="mb-5 p-2 bg-black">
+        <section id="rover-search-section" class="mb-5 p-2 border">
             <h2>Search</h2>
             <div class="d-flex">
                 <!-- Note to self: It's spelled "Perseverance" -->
@@ -103,18 +108,16 @@
 
         <!-- This section will display photos from the selected Sol date.
         Photos should be labeled with their respective cameras. -->
-        <section id="rover-gallery-section" class="mb-5">
+        <section id="rover-gallery-section" class="col-12 mb-5">
             <h2>Gallery</h2>
-            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly gap-5 w-100 p-5 overflow-auto" style="height: 900px;">
-
-                <div id="rover-placeholder-image" class="card overflow-hidden" style="width: 18rem; height: 50%; overflow:auto;">
+            <div id="rover-gallery-display" class="d-flex flex-wrap justify-content-evenly col-12 p- overflow-auto" style="height: 900px;">
+                <div id="rover-placeholder-image" class="card overflow-hidden col-12 col-sm-6 col-md-4 col-lg-3" style="height: 50%; overflow:auto;">
                     <img src="assets/images/rover_image_placeholder.jpg" class="card-img-top overflow-hidden" style="object-fit:cover">
                     <div class="card-body">
                         <p class="card-text">Image: Camera</p>
+                        <p class="card-text">Earth: Date</p>
                     </div>
                 </div>
-
-
             </div>
         </section>
 
