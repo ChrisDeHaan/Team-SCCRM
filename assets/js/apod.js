@@ -1,12 +1,14 @@
 var apodAPI = "Vza1e8P163wmIHjDfOB9nY3xwLOj4UbPCa679IcB"
 var currentDayApod = `https://api.nasa.gov/planetary/apod?api_key=${apodAPI}`
 var randomDayApod = `https://api.nasa.gov/planetary/apod?api_key=${apodAPI}&count=1`
+var monthArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 // dayjs to get the current year and days in current month
 var today = dayjs();
-var parseDate = today.format('YYYY DD MMM');
+var parseDate = today.format('YYYY DD MMM MM');
 var currentYear = parseDate.slice(0, 4)
-var currentMonth = parseDate.slice(8, 11)
+var currentMonthLetters = parseDate.slice(8, 11)
+var currentMonthNumbers = parseDate.slice(12, 14)
 var daysInCurrentMonth = Number(parseDate.slice(5, 7))
 
 // element variables for api APOD
@@ -42,6 +44,25 @@ yearSelectEl.addEventListener('click', () => { // populates year
     } else { return };
 })
 
+monthSelectEl.addEventListener('click', () => { // populates month
+    // first, check for beginning year
+    if (yearSelectEl.value === '1995') {
+        if (monthSelectEl.length !== 8) {
+            dynamicMonths(5, 12)
+        } else { return }
+    // second, check for current year
+    } else if (yearSelectEl.value === currentYear) {
+        if (monthSelectEl.length !== Number(currentMonthNumbers)) {
+            dynamicMonths(0, Number(currentMonthNumbers))
+        } else { return }
+    // all other months will just have all 12 months
+    } else {
+        if (monthSelectEl.length !== 13) {
+            dynamicMonths(0, 12)
+        } else { return }
+    }
+})
+
 daySelectEl.addEventListener('click', () => { // populates days
     // first, check for leap years and populates to 29 days
     if (monthSelectEl.value === 'Feb' && (yearSelectEl.value === '2024' || yearSelectEl.value === '2020' ||
@@ -61,7 +82,7 @@ daySelectEl.addEventListener('click', () => { // populates days
             }
         } else { return }     
     // third, check for current year & month
-    } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonth) {
+    } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonthLetters) {
         if (daySelectEl.length !== daysInCurrentMonth) {
             dynamicDays(1, daysInCurrentMonth)
         } else { return }
@@ -168,6 +189,15 @@ function dynamicDays (x, length) { // function used to populate the days dropdow
     }
 }
 
+function dynamicMonths (x, length) { // function used to populate the months dropdown list
+    monthSelectEl.innerHTML = `<option selected>Month</option>`
+    for ( i = x ; i < length; i++) {
+        monthSelectEl.innerHTML += `
+        <option>${monthArray[i]}</option>
+        `
+    }
+}
+
 function disableAttrAdd (element) { // function used to add the disabled attribute
     element.setAttribute('disabled', '')
 }
@@ -180,6 +210,5 @@ function disableAttrRemove (element) { //function used to remove the disabled at
 //     fetch(api).then(response=>response.json()).then(data=>console.log(data))
 // }
 
-var testArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-var searchTerm = 'May'
-var indexValue = testArray.indexOf(searchTerm);
+// var searchTerm = 'May' (these are likely to be used with the values)
+// var indexValue = testArray.indexOf(searchTerm);
