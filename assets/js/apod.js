@@ -88,30 +88,32 @@ daySelectEl.addEventListener('click', () => { // populates days
 
 yearSelectEl.addEventListener('change', (e) => { // removes/applies disabled attribute based on year
     if (e.target.value !== 'Year') {
-        monthSelectEl.removeAttribute('disabled')
+        disableAttrRemove(monthSelectEl)
         monthSelectEl.value = 'Month'
+        disableAttrAdd(searchBtnEl)
     } else {
-        monthSelectEl.setAttribute('disabled', '')
-        daySelectEl.setAttribute('disabled', '')
-        searchBtnEl.setAttribute('disabled', '')
+        disableAttrAdd(monthSelectEl)
+        disableAttrAdd(daySelectEl)
+        disableAttrAdd(searchBtnEl)
     }
 })
 
 monthSelectEl.addEventListener('change', () => { // removes/applies disabled attribute based on month
     if (monthSelectEl.value !== 'Month') {
-        daySelectEl.removeAttribute('disabled')
+        disableAttrRemove(daySelectEl)
         daySelectEl.value = 'Day'
+        disableAttrAdd(searchBtnEl)
     } else {
-        daySelectEl.setAttribute('disabled', '')
-        searchBtnEl.setAttribute('disabled', '')
+        disableAttrAdd(daySelectEl)
+        disableAttrAdd(searchBtnEl)
     }
 })
 
 daySelectEl.addEventListener('change', (e) => { // removes/applies disabled attribute based on day
     if (e.target.value !== 'Day') {
-        searchBtnEl.removeAttribute('disabled')
+        disableAttrRemove(searchBtnEl)
     } else {
-        searchBtnEl.setAttribute('disabled', '')
+        disableAttrAdd(searchBtnEl)
     }
 })
 
@@ -166,6 +168,13 @@ function dynamicDays (x, length) { // function used to populate the days dropdow
     }
 }
 
+function disableAttrAdd (element) { // function used to add the disabled attribute
+    element.setAttribute('disabled', '')
+}
+
+function disableAttrRemove (element) { //function used to remove the disabled attribute
+    element.removeAttribute('disabled')
+}
 // for testing purposes
 // function test (api) {
 //     fetch(api).then(response=>response.json()).then(data=>console.log(data))
