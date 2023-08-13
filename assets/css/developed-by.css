@@ -19,10 +19,6 @@ a:hover {
     cursor: pointer;
 }
 
-/* .name {
-    display: flex;
-    justify-content: space-between;
-} */
 .title {
     float: left;
 }
@@ -34,5 +30,19 @@ a:hover {
 .card-text {
     display: flex;
     width: 100%;
+    text-align: left;
 }
+
+#steven, #mike, #rachel, #campbell {
+    text-decoration: none;
+}
+
+#image-map {
+    border: 3px solide black;
+    border-radius: 5px;
+}
+/* 
+#steven, #mike, #rachel, #campbell:hover .text {
+    
+} */
 /* Develop by END */
