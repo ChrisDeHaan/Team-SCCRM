@@ -43,7 +43,7 @@
     <main class="mx-auto mt-5 col-12" style="color: white; max-width: 1440px;">
 
         <h1 class="text-center">Mars Rover Image Browser</h1>
-        <article class="text-center">This page allows users to search and explore images
+        <article class="text-center">This page allows you to explore images
             taken on NASA's Mars rover missions.<br> Scroll down to learn more about each rover.
         </article>
         <img src="assets/images/rover_red_planet.png" class="d-block mx-auto mb-3 img-fluid">
@@ -53,6 +53,16 @@
         Cards contain a photo, name, and article. -->
         <section id=" rover-info-section">
             <h2>Rover Bios</h2>
+
+            <card id="perseverance-card" class="d-flex flex-row-reverse mb-5 border">
+                <img src="assets/images/rover_perseverance_avatar.jpg" class="col-4">
+                <div id="perseverance-text" class="d-flex flex-column align-items-end me-3">
+                    <h3 id="perseverance-title">Perseverance</h3>
+                    <p id="perseverance-summary" class="text-end">Spirit info here.</p>
+                    <a href="#rover-search-section" class="btn btn-primary">Learn More</a>
+                </div>
+            </card>
+
             <!-- CURIOSITY -->
             <card id="curiosity-card" class="d-flex flex-row mb-5 border col-12">
                 <img src="assets/images/rover_curiosity_avatar.jpg" class="col-4">
