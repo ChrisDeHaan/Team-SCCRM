@@ -29,12 +29,21 @@ a:hover {
 
 
 .card-text {
+    display: flex;
     width: 100%;
     text-align: left;
 }
 
 #steven, #mike, #rachel, #campbell {
     text-decoration: none;
+}
+
+@media screen and (max-width: 950px) {
+    .imgmap {display:none;}
+}
+
+@media screen and (max-width: 950px) {
+    #imgmap {display:none;}
 }
 
 /* Develop by END */
