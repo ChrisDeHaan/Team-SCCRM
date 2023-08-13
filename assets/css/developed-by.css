@@ -30,7 +30,11 @@ a:hover {
 
 .card-text {
     width: 100%;
-    margin-top: 4rem;
     text-align: left;
 }
+
+#steven, #mike, #rachel, #campbell {
+    text-decoration: none;
+}
+
 /* Develop by END */
