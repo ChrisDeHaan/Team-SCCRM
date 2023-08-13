@@ -18,7 +18,12 @@ var apodExplanationEl = document.getElementById('explanationApod')
 var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
 
-// currentDayCall(currentDayApod) // load the current day's APOD on page load
+currentDayCall(currentDayApod) // load the current day's APOD on page load
+
+// catch wasn't working for 404 error, so this will load our 404 img in those cases instead
+document.addEventListener('error', e => {
+    apodImgEl.src = './assets/images/404.jpg'
+}, true);
 
 // Event Listeners
 var apodDiv = document.getElementById('currentApodImg') // random day listener elements
@@ -74,7 +79,7 @@ daySelectEl.addEventListener('click', () => { // populates days
         } else { return }; // this is used to not repopulate the list if it already has the correct number of days
     // second, check for first year and month of APOD
     } else if (yearSelectEl.value === '1995' && monthSelectEl.value === 'Jun') {
-        if (daySelectEl.length !== 13) { //can't use dynamic days because there is a gap from 16th to 20th
+        if (daySelectEl.length !== 13) { // can't use dynamic days because there is a gap from 16th to 20th
             daySelectEl.innerHTML = `<option selected>Day</option><option selected>16</option>`
             for ( i = 20; i < 31; i++) {
                 daySelectEl.innerHTML += `
@@ -85,7 +90,7 @@ daySelectEl.addEventListener('click', () => { // populates days
     // third, check for current year & month
     } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonthLetters) {
         if (daySelectEl.length !== daysInCurrentMonth) {
-            dynamicDays(1, daysInCurrentMonth)
+            dynamicDays(1, (daysInCurrentMonth+1)) // needs to be +1 to account for option 'Day'
         } else { return }
     // fourth, check for feb
     } else if (monthSelectEl.value === 'Feb') {
@@ -250,10 +255,3 @@ function displaySavedImages (array) {
         `
     }
 }
-
-// for testing purposes
-// function test (api) {
-//     fetch(api).then(response=>response.json()).then(data=>console.log(data))
-// }
-
-// 1-21-2020 is a 404 response
