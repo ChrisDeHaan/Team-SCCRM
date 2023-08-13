@@ -9,24 +9,21 @@
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/cam.css">
   <link rel="stylesheet" href="./assets/css/apod.css">
-  <link rel="stylesheet" href="./assets/css/sizing.css">
 </head>
 
 <body>
   <header>
-    <nav id="navbar" class="navbar navbar-expand-lg ">
+    <nav id="navbar" class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="developed-by.html">
         <div class="logo-image logo-container">
           <img src="assets/images/logo2" class="img-fluid" id="logo">
-          <!-- <p id="team">Team </p> 
-                    <p id="SCCRM">SCCRM</p> -->
         </div>
       </a>
-      <div id="navButtons"class="container-fluid ">
+      <div id="navButtons" class="container-fluid ">
         <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
           aria-label="Toggle navigation">
-          <span id="navBtn"class="navbar-toggler-icon"></span>
+          <span id="navBtn" class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
           <div id="navbar" class="navbar-nav ml-auto">
@@ -40,48 +37,76 @@
       </div>
     </nav>
   </header>
-  <main style="max-width: 1440px;">
+  <main style="max-width: 1440px;" class="mx-auto">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/images/space1.png" class="d-block w-100 space" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>"Astronomers, like burglars and jazz musicians, operate best at night."</h5>
-                <p>Miles Kington: Journalist</p>
-              </div>
-          </div>
-    
-          <div class="carousel-item">
-            <img src="assets/images/space2.png" class="d-block w-100 space" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>"The universe is a pretty big place. If it is just us, seems like an awful waste of space."</h5>
-                <p>Carl Sagan: Astronomer</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/space3.jpg" class="d-block w-100 space" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>"It is far better to grasp the universe as it really is than to persist in delusion, however satisfying and reassuring."</h5>
-                <p>Miles Kington: Journalist</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/space4.jpg" class="d-block w-100 space" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>”I did not feel like a giant. I felt very, very small.”</h5>
-                <p>Neil Armstrong: First astronaut to walk on the Moon.</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/space5.png" class="d-block w-100 space" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>“Looking up into the night sky is looking into infinity-distance is incomprehensible and therefore meaningless.”</h5>
-                <p>Douglas Adams: Author of `The Hitchhiker's Guide to the Galaxy</p>
-              </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-itm-custom">
+          <img src="assets/images/space1.png" class="d-block w-100 space c-img-custom" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">"Astronomers, like burglars and jazz musicians, operate best at night."</h5>
+            <p class="fs-4 fst-italic">Miles Kington: Journalist</p>
           </div>
         </div>
+        <div class="carousel-item c-itm-custom">
+          <img src="assets/images/space2.png" class="d-block w-100 space c-img-custom" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">"The universe is a pretty big place. If it is just us, seems like an awful waste of space."
+            </h5>
+            <p class="fs-4 fst-italic">Carl Sagan: Astronomer</p>
+          </div>
+        </div>
+        <div class="carousel-item c-itm-custom">
+          <img src="assets/images/space3.jpg " class="d-block w-100 space c-img-custom" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">"It is far better to grasp the universe as it really is than to persist in delusion,
+              however satisfying
+              and reassuring."</h5>
+            <p class="fs-4 fst-italic">Miles Kington: Journalist</p>
+          </div>
+        </div>
+        <div class="carousel-item c-itm-custom">
+          <img src="assets/images/space4.jpg" class="d-block w-100 space c-img-custom" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">”I did not feel like a giant. I felt very, very small.”</h5>
+            <p class="fs-4 fst-italic">Neil Armstrong: First astronaut to walk on the Moon.</p>
+          </div>
+        </div>
+        <div class="carousel-item c-itm-custom">
+          <img src="assets/images/space5.png" class="d-block w-100 space c-img-custom" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="fs-3">“Looking up into the night sky is looking into infinity-distance is incomprehensible and
+              therefore
+              meaningless.”</h5>
+            <p class="fs-4 fst-italic">Douglas Adams: Author of `The Hitchhiker's Guide to the Galaxy</p>
+          </div>
+        </div>
+      </div>
+      <figure class="text-end d-md-none d-block m-2">
+        <blockquote class="blockquote fs-6 justifyMe">
+          <p>“Space is for everybody. It’s not just for a few people in science or math, or for a select group of
+            astronauts. That’s our new frontier out there, and it’s everybody’s business to know about space.”</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-light fst-italic pt-2 mb-5">
+          Christa McAuliffe: Teacher and astronaut
+        </figcaption>
+      </figure>
+      <section class="col-11 col-md-10 mx-auto mt-4 text-center">
+        <h1 class="display-6"> Welcome to Team SCRRM! </h1>
+        <p class="fs-5 justifyMe">This website is for the curious, intrepid space explorers looking for an intuitive way
+          to access and sift through some of NASA's most stunning images. We utilize NASA's Astronomy Picture of the Day and Mars Rover Photos APIs. 
+        </p>
+        <p class="fs-5 justifyMe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis assumenda
+          voluptatum dolor
+          molestias
+          sequi eos iste praesentium, reiciendis magni repellendus odio amet, corrupti officiis dicta maxime tenetur non
+          ut velit.</p>
+        <p class="fs-5 justifyMe">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim minima, nihil nesciunt,
+          vel
+          aliquid, commodi
+          id quis ipsum hic sint officiis illo accusantium similique consectetur? Dignissimos voluptate iure atque quod.
+        </p>
+      </section>
   </main>
-  <p>This is the homepage</p>
 
 
   <footer class="row">
