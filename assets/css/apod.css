@@ -3,24 +3,81 @@
     --dark-grey: rgb(41, 40, 40);
     --grey: rgb(101, 100, 100);
     --light-grey: grey;
+    --off-white: rgb(227, 226, 226);
+    --dark-purple: rgb(109, 36, 168);
+    --light-purple: rgb(184, 100, 201);
+    --dark-cyan: rgb(18, 118, 123);
+    --cyan: rgb(28, 204, 214);
 }
 
+/* background color for website */
 body {
     background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
     var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%);
     color: white;
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* background color applied to apod divs */
 .bg-custom {
     background: linear-gradient(var(--grey) 15%, var(--light-grey)50%, var(--grey)85%);
     border: 3px solid var(--dark-grey);
 }
 
+/* custom border applied to images on apod*/
 .border-custom {
     border: 8px solid var(--dark-grey);
     border-radius: 3%;
 }
 
-#randomClickApi:hover {
+/* current APOD shows pointer with mouse so users intuitavely know they can click */
+#currentApodImg {
     cursor: pointer;
+}
+
+/* couldn't find the text-justify in bootstrap, so here we go */
+.justifyMe {
+    text-align: justify;
+}
+
+/* customization for the dropdown lists and buttons in the apod search div */
+.border-select-custom {
+    border: 3px solid var(--dark-grey);
+    background-color: var(--off-white);
+}
+
+.border-select-custom:focus {
+    border: 3px solid rgb(31, 227, 239)
+}
+
+.border-select-custom:disabled {
+    background-color: var(--grey);
+}
+
+.btn-search-custom {
+    border: 3px solid var(--dark-grey);
+    color: white;
+    background: linear-gradient(var(--dark-purple) 15%, var(--light-purple)50%, var(--dark-purple)85%);
+} 
+
+.btn-search-custom:hover {
+    transition: 150ms ease-in;
+    border: 3px solid var(--light-purple);
+}
+
+.btn-search-custom:disabled {
+    border: 3px solid black;
+    color: var(--almost-black);
+    background: var(--grey)
+}
+
+.btn-save-custom {
+    border: 3px solid var(--dark-grey);
+    background: linear-gradient(var(--dark-cyan), var(--cyan), var(--dark-cyan));
+}
+
+.btn-save-custom:hover {
+    transition: 150ms ease-in;
+    border: 3px solid var(--cyan);
 }
