@@ -27,8 +27,8 @@ a:hover {
     float: right;
 }
 
+
 .card-text {
-    display: flex;
     width: 100%;
     text-align: left;
 }
