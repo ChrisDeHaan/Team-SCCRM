@@ -74,8 +74,12 @@ body{
             width: 40px;
         }
     }
-.carousel-caption{
-    background: rgba(0, 0, 0, 40%);
-    text-shadow: 6px 6px 3px#000000;
-    border-radius: 20px;
-}
+    .carousel-caption{
+        background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
+      var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%); 
+      text-shadow: 6px 6px 3px#000000;
+      border-radius: 20px;
+   }
+ .carousel-inner{
+    width: 98.9vw
+ }
