@@ -3,13 +3,17 @@ body {
 }
 
 #logo {
-    width: 90%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 }
 
 #navbar {
+   height: 50%;
     margin-left: auto;
     padding-top: 0;
+    /* background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
+    var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%);
+    color: white; */
 }
 
 #navlinks {
@@ -42,34 +46,71 @@ body {
 
 #navToggle {
     background: linear-gradient(#afefff, #ab41b4);
+    height:50%;
+    margin-left:8%;
 }
-
 
 
 
 @media screen and (max-width: 991px) {
     #navToggle {
-        position: fixed;
-        top: 5%;
-        right: 5%;
-        left: initial;
+        /* position: fixed; */
+        /* justify-self: right; */
+       margin-left: 50%;
     }
+    
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 800px) {
     #navBtn {
-        width: 20px;
+        width: 15px;
     }
 
     #navToggle {
-        position: fixed;
-        top: 5%;
-        right: 5%;
-        left: initial;
-        width: 40px;
+     margin-left:40% ;
     }
-}
 
+}
+@media screen and (max-width: 700px) {
+    #navBtn {
+        width: 15px;
+    }
+
+    #navToggle {
+     margin-left:30% ;
+    }
+
+}
+@media screen and (max-width:650px) {
+    #navBtn {
+        width: 15px;
+    }
+
+    #navToggle {
+     margin-left:20% ;
+    }
+
+}
+@media screen and (max-width: 590px) {
+    #navBtn {
+        width: 15px;
+    }
+
+    #navToggle {
+     margin-left:13% ;
+    }
+
+}
+@media screen and (max-width: 450px) {
+    #navBtn {
+        width: 15px;
+    }
+
+    #navToggle {
+     margin-left:8% ;
+    }
+
+}
 .carousel-caption {
     background: rgba(7, 7, 7, 50%);
     text-shadow: 6px 6px 3px#000000;
