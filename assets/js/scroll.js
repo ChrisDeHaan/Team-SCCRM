@@ -1,21 +1,24 @@
 var width = $(innerWidth)
-var scrollPos = document.documentElement.scrollTop || document.body.scrollTop
+var scrollPos = window.scrollY
 // var showToggle = $(window)
 
 $(window).scroll(function() {
+    showToggle();
     if ($(window).scrollTop() > 50) {
         $('#navToggle').hide();
     }
-    else {
-        
-        // if ($(innerWidth) < 980 && $(window).scrollTop() > 50)
-        $('#navToggle').show();
-    }
+    // else {
+    //     if (window.width < 900){
+    //         $('#navToggle').show();
+    // //     // if ($(innerWidth) < 980 && $(window).scrollTop() > 50)
+    // //     $('#navToggle').show();
+    //     }
+    // }
+    return;
 });
 
-$(window).width(function(){
-    if (window.width < 900 && scrollPos>50){
+function showToggle(){
+    if (window.width < 900){
         $('#navToggle').show();
-
     }
-})
+}
