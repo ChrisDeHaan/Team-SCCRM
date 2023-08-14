@@ -33,11 +33,16 @@ function fetchCameraManifest(rover, solDate) {
     return fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
+            const roverDetails = data.photo_manifest;
+            console.log(roverDetails);
             const manifestEntry = data.photo_manifest.photos.find(photo => photo.sol == solDate);
             const cameraList = manifestEntry.cameras;
-            return cameraList;
+            return (roverDetails, cameraList);
         });
 }
+
+// data.photo_manifest
+
 
 // The camera select dropdown is populated with cameras from a list
 function updateCameraSelect(cameraList) {
