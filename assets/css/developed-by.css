@@ -46,4 +46,8 @@ a:hover {
     #imgmap {display:none;}
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* Develop by END */
