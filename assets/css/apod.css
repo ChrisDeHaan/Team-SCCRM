@@ -17,6 +17,16 @@ body {
     color: white;
 }
 
+/* carousel on homepage */
+.c-itm-custom {
+    height: 65vh;
+}
+
+.c-img-custom {
+    height: 100%;
+    object-fit: cover;
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* background color applied to apod divs */

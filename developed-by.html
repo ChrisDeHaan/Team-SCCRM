@@ -7,60 +7,75 @@
     <title>SCCRM | Developed By</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/css/developed-by.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="./assets/css/developed-by.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="./assets/css/cam.css">
+    <link rel="stylesheet" href="./assets/css/cam.css">
     <link rel="stylesheet" href="./assets/css/apod.css">
 </head>
 
 <body>
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg ">
-          <a class="navbar-brand" href="developed-by.html">
-            <div class="logo-image logo-container">
-              <img src="assets/images/logo2" class="img-fluid" id="logo">
-              <!-- <p id="team">Team </p> 
+            <a class="navbar-brand" href="developed-by.html">
+                <div class="logo-image logo-container">
+                    <img src="assets/images/logo2" class="img-fluid" id="logo">
+                    <!-- <p id="team">Team </p> 
                         <p id="SCCRM">SCCRM</p> -->
-            </div>
-          </a>
-          <div id="navButtons"class="container-fluid ">
-            <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span id="navBtn"class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-              <div id="navbar" class="navbar-nav ml-auto">
-                <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
-                <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
-                <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
-                <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
-    
-              </div>
-            </div>
-          </div>
+                </div>
+            </a>
+            <div id="navButtons" class="container-fluid ">
+                <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span id="navBtn" class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div id="navbar" class="navbar-nav ml-auto">
+                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+                    </div>
+                </div>
         </nav>
-      </header>
+    </header>
     <!-- <a href="index.html">Homepage</a><br>
     <a href="apod.html">Astronomy Picture of the Day</a><br>
     <a href="mars-rover.html">Mars Rover</a><br> -->
     <main class="containerDb col-10 mx-auto mb-3 mt-2" style="max-width: 1440px;">
         <h2 class="dbH2">Meet the developers!</h2>
-        <div class="card mb-3 mx-auto" style="max-width: 800px;">
+
+        <div class="card mb-3 mt-3 mx-auto" id="imgmap" style="max-width: 800px;">
+            <img src="./assets/images/solar system2.png" class="imgmap" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="_self" alt="Christopher" title="Christopher" href="#chris" coords="135,386,41"
+                    shape="circle">
+                <area target="_self" alt="Michael" title="Michael" href="#mike" coords="398,186,39" shape="circle">
+                <area target="_self" alt="Rachel" title="Rachel" href="#rachel" coords="267,518,33" shape="circle">
+                <area target="_self" alt="Campbell" title="Campbell" href="#campbell" coords="521,501,36"
+                    shape="circle">
+                <area target="_self" alt="Steven" title="Steven" href="#steven" coords="529,173,33" shape="circle">
+            </map>
+        </div>
+
+        <div class="card mb-3 mt-3 mx-auto" style="max-width: 800px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="./assets/images/Chris.jpg" class="img-fluid rounded-start" alt="Christopher Dehaan">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <div class="title"><h4 class="card-title display-6 name">Christopher DeHaan</h4></div>
-                        <div class="dblogo mt-2"><a href=" https://github.com/ChrisDeHaan"
-                            target="_blank"><img src="./assets/images/GitHub.png" style="height: 35px; width: 35px;"
-                                class="dbImg" alt="GitHub link to site repo"></a><a
-                            href="https://www.linkedin.com/in/christopher-dehaan-b60a68117/" target="_blank"><img
-                                src="./assets/images/Linkedin.png" style="height: 30px; width: 30px;" class="dbImg"
-                                alt="GitHub link to site repo"></a></div>
+                        <div class="title">
+                            <h4 class="card-title display-6 name" id="chris">Christopher DeHaan</h4>
+                        </div>
+                        <div class="dblogo mt-2"><a href=" https://github.com/ChrisDeHaan" target="_blank"><img
+                                    src="./assets/images/GitHub.png" style="height: 35px; width: 35px;" class="dbImg"
+                                    alt="GitHub link to site repo"></a><a
+                                href="https://www.linkedin.com/in/christopher-dehaan-b60a68117/" target="_blank"><img
+                                    src="./assets/images/Linkedin.png" style="height: 30px; width: 30px;" class="dbImg"
+                                    alt="Linkedin link"></a></div>
                         <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
                             currently taking a coding bootcamp through UCF with the ambition of accelerating my career
                             growth. I have a Bachelor's Degree in Criminology from Florida State University but am in
@@ -82,18 +97,19 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <div class="title"><h4 class="card-title display-6 name">Michael Marsolo</h4></div>
-                        <div class="dblogo mt-2"><a href="https://github.com/Elrond-Hubbard"
-                            target="_blank"><img src="./assets/images/GitHub.png" style="height: 35px; width: 35px;"
-                                class="dbImg" alt="GitHub link to site repo"></a>
-                    <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
-                        currently taking a coding bootcamp through UCF with the ambition of accelerating my career
-                        growth. I have a Bachelor's Degree in Criminology from Florida State University but am in
-                        the process of transitioning my career into tech as it's something I am passionate about. My
-                        current employment as a QA tester has me working with various websites and applications and
-                        has allowed me to get hands on experience with Agile software development, Github, and
-                        familiarity with multiple different applications designed to track team efforts such as
-                        Jira, Confluence, Notion, Linear, Clickup, Asana, and more.</p></div>
+                        <div class="title">
+                            <h4 class="card-title display-6 name" id="mike">Michael Marsolo</h4>
+                        </div>
+                        <div class="dblogo mt-2"><a href="https://github.com/Elrond-Hubbard" target="_blank"><img
+                                    src="./assets/images/GitHub.png" style="height: 35px; width: 35px;" class="dbImg"
+                                    alt="GitHub link to site repo"></a>
+                            <p class="card-text">Introducing Michael James Marsolo, a passionate web developer currently
+                                honing his
+                                skills at UCF's Full Stack Web Development Bootcamp. While still in the learning phase,
+                                Michael is always committed to growth and mastery of his craft. With special interests
+                                in music, space, AI, and medicine, he is eagerly expanding his knowledge of programming
+                                languages and technologies</p>
+                        </div>
                         <div class="imgContainerDb">
                         </div>
                     </div>
@@ -107,21 +123,23 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <div class="title"><h4 class="card-title display-6 name">Steven Bunde</h4></div>
+                        <div class="title">
+                            <h4 class="card-title display-6 name" id="steven">Steven Bunde</h4>
+                        </div>
                         <div class="dblogo mt-2"><a href="https://github.com/Bunde20" target="_blank"><img
-                            src="./assets/images/GitHub.png" style="height: 35px; width: 35px;" class="dbImg"
-                            alt="GitHub link to site repo"></a><a
-                        href="https://www.linkedin.com/in/stevenbunde/" target="_blank"><img
-                            src="./assets/images/Linkedin.png" style="height: 30px; width: 30px;" class="dbImg"
-                            alt="GitHub link to site repo"></a></div>
-                        <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
-                            currently taking a coding bootcamp through UCF with the ambition of accelerating my career
-                            growth. I have a Bachelor's Degree in Criminology from Florida State University but am in
-                            the process of transitioning my career into tech as it's something I am passionate about. My
-                            current employment as a QA tester has me working with various websites and applications and
-                            has allowed me to get hands on experience with Agile software development, Github, and
-                            familiarity with multiple different applications designed to track team efforts such as
-                            Jira, Confluence, Notion, Linear, Clickup, Asana, and more.</p>
+                                    src="./assets/images/GitHub.png" style="height: 35px; width: 35px;" class="dbImg"
+                                    alt="GitHub link to site repo"></a><a
+                                href="https://www.linkedin.com/in/stevenbunde/" target="_blank"><img
+                                    src="./assets/images/Linkedin.png" style="height: 30px; width: 30px;" class="dbImg"
+                                    alt="Linkedin link"></a></div>
+                        <p class="card-text">Steven has spend the past 10 years of his professional career in the
+                            strength and conditioning industry helping clients achieve their physical goals. Customer
+                            service and problem solving have been a large component of his career and he is looking to
+                            take
+                            his problem solving ability to the tech industry. While he is new to the field, he is
+                            looking forward to developing the
+                            abilities to thrive in tech. Steven is currently interested in website design and marketing
+                            as a way to help users meet their needs.</p>
                         <div class="imgContainerDb">
                         </div>
                     </div>
@@ -135,21 +153,17 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <div class="title"><h2 class="display-6 card-title name">Rachel Hochman</h2></div>
-                        <div class="dblogo mt-2"><a href="https://github.com/RachelCodes42"
-                            target="_blank"><img src="./assets/images/GitHub.png" style="height: 35px; width: 35px;"
-                                class="dbImg" alt="GitHub link to site repo"></a><a
+                        <div class="title">
+                            <h2 class="display-6 card-title name" id="rachel">Rachel Hochman</h2>
+                        </div>
+                        <div class="dblogo mt-2"><a href="https://github.com/RachelCodes42" target="_blank"><img
+                                    src="./assets/images/GitHub.png" style="height: 35px; width: 35px;" class="dbImg"
+                                    alt="GitHub link to site repo"></a><a
                                 href="https://www.linkedin.com/in/rachel-hochman-26a125187/" target="_blank"><img
                                     src="./assets/images/Linkedin.png" style="height: 30px; width: 30px;" class="dbImg"
-                                    alt="GitHub link to site repo"></a></div>
-                        <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
-                            currently taking a coding bootcamp through UCF with the ambition of accelerating my career
-                            growth. I have a Bachelor's Degree in Criminology from Florida State University but am in
-                            the process of transitioning my career into tech as it's something I am passionate about. My
-                            current employment as a QA tester has me working with various websites and applications and
-                            has allowed me to get hands on experience with Agile software development, Github, and
-                            familiarity with multiple different applications designed to track team efforts such as
-                            Jira, Confluence, Notion, Linear, Clickup, Asana, and more.</p>
+                                    alt="Linkedin link"></a></div>
+                        <p class="card-text">BS-UCF + 5yrs healthcare exp + software dev skills: blending healthcare
+                            expertise with software dev skills to deliver exceptional care/dev innovative solutions.</p>
                         <div class="imgContainerDb">
                         </div>
                     </div>
@@ -163,24 +177,30 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <div class="title"><h4 class="card-title display-6 name">Campbell Gilliland</h4></div>
-                        <div class="dblogo mt-2"><a href="https://github.com/CambiG1123" target="
+                        <div class="title">
+                            <h4 class="card-title display-6 name" id="campbell">Campbell Gilliland</h4>
+                        </div>
+                            <div class="dblogo mt-2"><a href="https://github.com/CambiG1123" target="
                             _blank"><img src="./assets/images/GitHub.png" style="height: 35px; width: 35px;"
-                                class="dbImg" alt="GitHub link to site repo"></a></div>
-                        <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
-                            currently taking a coding bootcamp through UCF with the ambition of accelerating my career
-                            growth. I have a Bachelor's Degree in Criminology from Florida State University but am in
-                            the process of transitioning my career into tech as it's something I am passionate about. My
-                            current employment as a QA tester has me working with various websites and applications and
-                            has allowed me to get hands on experience with Agile software development, Github, and
-                            familiarity with multiple different applications designed to track team efforts such as
-                            Jira, Confluence, Notion, Linear, Clickup, Asana, and more.</p>
-                        <div class="imgContainerDb">
+                                        class="dbImg" alt="GitHub link to site repo"></a></div>
+                            <p class="card-text">Hello! My name is Chris and I'm a burgeoning full-stack web developer
+                                currently taking a coding bootcamp through UCF with the ambition of accelerating my
+                                career
+                                growth. I have a Bachelor's Degree in Criminology from Florida State University but am
+                                in
+                                the process of transitioning my career into tech as it's something I am passionate
+                                about. My
+                                current employment as a QA tester has me working with various websites and applications
+                                and
+                                has allowed me to get hands on experience with Agile software development, Github, and
+                                familiarity with multiple different applications designed to track team efforts such as
+                                Jira, Confluence, Notion, Linear, Clickup, Asana, and more.</p>
+                            <div class="imgContainerDb">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </main>
 
     <footer class="row">
