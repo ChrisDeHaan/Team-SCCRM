@@ -80,3 +80,6 @@ body{
       text-shadow: 6px 6px 3px#000000;
       border-radius: 20px;
    }
+ .carousel-inner{
+    width: 98.9vw
+ }
