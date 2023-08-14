@@ -47,6 +47,8 @@ https://chrisdehaan.github.io/Team-SCCRM/
 - <a href ="https://stackoverflow.com/questions/8710442/how-to-specify-multiple-conditions-in-an-if-statement-in-javascript">Multiple conditions in if statement</a>
 - <a href ="https://developer.mozilla.org/en-US/docs/Web/API/Window/error_event">addEventListener error event</a>
 - <a href ="https://stackoverflow.com/questions/10422949/css-background-opacity">rgba explanation and use</a>
+- <a href ="https://www.amitmerchant.com/shine-animation-on-hover-using-css/">shine effect</a>
+- <a href ="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity">centering caption in image</a>
 
 ## License
 
