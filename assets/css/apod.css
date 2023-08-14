@@ -38,7 +38,7 @@ body {
 /* custom border applied to images on apod*/
 .border-custom {
     border: 8px solid var(--dark-grey);
-    border-radius: 3%;
+    border-radius: 2%;
 }
 
 /* current APOD shows pointer with mouse so users intuitavely know they can click */
@@ -67,12 +67,12 @@ body {
 
 .btn-search-custom {
     border: 3px solid var(--dark-grey);
-    color: white;
     background: linear-gradient(var(--dark-purple) 15%, var(--light-purple)50%, var(--dark-purple)85%);
 } 
 
 .btn-search-custom:hover {
     transition: 150ms ease-in;
+    color: white;
     border: 3px solid var(--light-purple);
 }
 
@@ -89,6 +89,7 @@ body {
 
 .btn-save-custom:hover {
     transition: 150ms ease-in;
+    color: white;
     border: 3px solid var(--cyan);
 }
 
