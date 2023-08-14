@@ -1,85 +1,81 @@
-body{
+body {
     width: 99%;
 }
+
 #logo {
     width: 90%;
     height: 100%;
-  
-  }
-  
-  #navbar {
-      margin-left: auto;
+}
+
+#navbar {
+    margin-left: auto;
     padding-top: 0;
-    
-  
-  }
-  
-  #navlinks {
-      color: aliceblue;
-      margin-right: 20px;
-      font-size: 20px;
-     
-   
-  }
-  
-  #navlinks:hover {
-      color: rgb(137, 185, 185);
-  }
- 
-.logo-container{
+}
+
+#navlinks {
+    color: aliceblue;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+#navlinks:hover {
+    color: var(--cyan);
+}
+
+.logo-container {
     display: flex;
     /* flex-wrap: nowrap; */
-    
 }
-#team{
+
+#team {
     padding-top: 42px;
     color: rgb(99, 209, 236);
     font-size: 50px;
-
 }
-#SCCRM{
+
+#SCCRM {
     padding-top: 42px;
     padding-left: 2%;
     color: #ab41b4;
     font-size: 50px;
-    
 }
-#navToggle{
-    
+
+#navToggle {
     background: linear-gradient(#afefff, #ab41b4);
 }
 
 
-   
 
-    @media screen and (max-width: 991px) {
-        #navToggle{
-            position: fixed;
-            top: 5%;
-            right: 5%;
-            left: initial;
-            
-        }
+
+@media screen and (max-width: 991px) {
+    #navToggle {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        left: initial;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    #navBtn {
+        width: 20px;
     }
 
-    @media screen and (max-width: 376px) {
-        #navBtn{
-           width: 20px;
-        }
-        #navToggle{
-            position: fixed;
-            top: 5%;
-            right: 5%;
-            left: initial;
-            width: 40px;
-        }
+    #navToggle {
+        position: fixed;
+        top: 5%;
+        right: 5%;
+        left: initial;
+        width: 40px;
     }
-    .carousel-caption{
-        background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
-      var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%); 
-      text-shadow: 6px 6px 3px#000000;
-      border-radius: 20px;
-   }
- .carousel-inner{
+}
+
+.carousel-caption {
+    background: rgba(7, 7, 7, 50%);
+    text-shadow: 6px 6px 3px#000000;
+    border-radius: 20px;
+}
+
+.carousel-inner {
     width: 98.9vw
- }
+}
