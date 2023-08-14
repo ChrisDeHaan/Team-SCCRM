@@ -18,7 +18,7 @@ var apodExplanationEl = document.getElementById('explanationApod')
 var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
 
-currentDayCall(currentDayApod) // load the current day's APOD on page load
+// currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // catch wasn't working for 404 error, so this will load our 404 img in those cases instead
 document.addEventListener('error', e => {
@@ -247,7 +247,7 @@ function displaySavedImages (array) {
             <a href=${array[i].HDUrl}
                 target="_blank">
                 <img src=${array[i].HDUrl}
-                    class="w-100 border-custom">
+                    class="w-100 border-custom apod-img-custom bg-light">
             </a>
             <figcaption class="mt-2 h4">${array[i].title}</figcaption>
             <figcaption class="mt-2">${array[i].copyright}</figcaption>
