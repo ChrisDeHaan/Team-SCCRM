@@ -89,7 +89,7 @@ daySelectEl.addEventListener('click', () => { // populates days
         } else { return }     
     // third, check for current year & month
     } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonthLetters) {
-        if (daySelectEl.length !== daysInCurrentMonth) {
+        if (daySelectEl.length !== (daysInCurrentMonth+1)) {
             dynamicDays(1, (daysInCurrentMonth+1)) // needs to be +1 to account for option 'Day'
         } else { return }
     // fourth, check for feb
@@ -240,7 +240,7 @@ function disableAttrRemove (element) { // function used to remove the disabled a
 
 function displaySavedImages (array) {
     imgGalleryEl.innerHTML = '' // reset the Gallery
-    for ( i=0; i < array.length; i++) {
+    for ( i = (array.length-1); i >= 0; i--) {
         imgGalleryEl.innerHTML += `
         <div class="col-12 col-md-6 mx-auto my-3">
             <div class="h5">${array[i].date}</div>
