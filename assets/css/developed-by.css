@@ -5,34 +5,30 @@
 }
 
 #imgUpper {
-    opacity: 1;
-
-}
-
-.hover-effects1 {
-    transition: .4s ease;
-    opacity: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    cursor: pointer;
-    pointer-events: none;
-    border-radius: 10px;
-    padding: 3px 10px;
-    border: 3px solid rgba(41, 40, 40, 60%);
-}
-
-#imgmap:hover #imgUpper {
-    opacity: 0;
-}
-
-.imgmap:hover .hover-effects1 {
+    top: 0;
+    left: 0;
     opacity: 1;
-} 
+    z-index: 0;
+    height: 823px;
+    width: 823px;
+    
+}
 
-/* end hover effect for images */
+#imgLower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: .5;
+    height: 823px;
+    width: 823px;
+}
+
+#imgLower:hover {
+    transition: .4s ease;
+    opacity: 1;
+}
 
 .dbH2 {
     margin-top: 2rem;
