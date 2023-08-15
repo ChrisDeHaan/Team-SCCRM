@@ -94,6 +94,7 @@ function updateCameraSelect(cameraList) {
     });
 }
 
+
 // An image card is created and labeled for each photo in the return
 function createImageCards(photos) {
     galleryEl.empty();
@@ -113,25 +114,18 @@ function createImageCards(photos) {
 // .ready handles all input events on the page
 $(document).ready(function() {
 
-    perseveranceLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=perseverance]").attr('selected', 'selected').trigger('input');
-    })
-    curiosityLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=curiosity]").attr('selected', 'selected').trigger('input');
-    })
-    opportunityLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=opportunity]").attr('selected', 'selected').trigger('input');
-    })
-    spiritLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=spirit]").attr('selected', 'selected').trigger('input');
-    })
-
+    // Learn More buttons pass input to rover dropdown menu
+    perseveranceLearnEl.on('click', function() {roverSelectEl.val('perseverance').trigger('input');})
+    curiosityLearnEl.on('click', function() {roverSelectEl.val('curiosity').trigger('input');})
+    spiritLearnEl.on('click', function() {roverSelectEl.val('spirit').trigger('input');})
+    opportunityLearnEl.on('click', function() {roverSelectEl.val('opportunity').trigger('input');})
+    
     roverSelectEl.on('input', function(rover) {
         rover = roverSelectEl.val();
         wouldYouLikeToKnowMore(rover);
     })
 
-
+    
     searchButtonEl.on('click', function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
@@ -147,6 +141,8 @@ $(document).ready(function() {
                 updateCameraSelect(cameraList)
             })
     });
+
+
     // Gallery is filtered based on currently selected camera
     cameraSelectEl.on('input', function() {
         const selectedFilter = $(this).children('option:selected').val();
