@@ -25,7 +25,6 @@ function fetchRoverPhotos(rover, solDate) {
     return fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             return data.photos
         })
 }
@@ -60,26 +59,22 @@ function fetchRoverDetails(rover) {
 }
 
 
-// The rover's "Learn More" card is populated with details from the call
-// landing_date: "2021-02-18"
-// launch_date: "2020-07-30"
-// max_date: "2023-08-13"
-// max_sol: 882
-// name: "Perseverance"
-// status: "active"
-// total_photos: 174324
+// Rover details are displayed on the page
 function wouldYouLikeToKnowMore(rover) {
     learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
-            solDateEl.attr('placeholder', `Enter Sol Date (Max Sol: ${roverDetails.max_sol})`)
+            const maxDate = roverDetails.max_sol;
+            const launchDate = dayjs(roverDetails.launch_date).format('MM/DD/YYYY');
+            const landingDate = dayjs(roverDetails.landing_date).format('MM/DD/YYYY');
+            // The maximum sol date is displayed in the date search form
+            solDateEl.attr('placeholder', `Enter Sol Date (Max Sol: ${roverDetails.max_sol})`);
             learnMoreEl.empty();
             learnMoreEl.append(`
-            <p class="col-12 col-md-6 col-xl-3">Launch Date: ${roverDetails.launch_date}</p>
-            <p class="col-12 col-md-6 col-xl-3">Landing Date: ${roverDetails.landing_date}</p>
-            <p class="col-12 col-md-6 col-xl-3">Mission Status: ${roverDetails.status}</p>
-            `)
-            maxDate = roverDetails.max_sol;
+            <p class="col-12 col-md-6 col-xl-3 mb-0">Launch Date: ${launchDate}</p>
+            <p class="col-12 col-md-6 col-xl-3 mb-0">Landing Date: ${landingDate}</p>
+            <p class="col-12 col-md-6 col-xl-3 mb-0">Mission Status: ${roverDetails.status}</p>
+            `);
             return maxDate;
         })
 }
@@ -126,11 +121,12 @@ function errorLog(error) {
     `)
 }
 
+
 // A loading indicator is displayed in the gallery
 function reticulatingSplines() {
     galleryEl.empty();
     galleryEl.append(`
-    <i class="spinner-border" style="width: 10rem; height: 10rem;" role="status"></i>
+    <i class="spinner-border" style="width: 10rem; height: 10rem;" role="status">
     `)
 }
 
@@ -149,11 +145,13 @@ $(document).ready(function() {
     })
 
 
+    // 
     searchButtonEl.on('click', function() {
-        reticulatingSplines();
+        reticulatingSplines(); //
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
         fetchRoverPhotos(rover, solDate)
+            
             .then(photos => {
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
