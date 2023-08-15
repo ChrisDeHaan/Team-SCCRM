@@ -33,15 +33,44 @@ function fetchCameraManifest(rover, solDate) {
     return fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            const roverDetails = data.photo_manifest;
-            console.log(roverDetails);
             const manifestEntry = data.photo_manifest.photos.find(photo => photo.sol == solDate);
             const cameraList = manifestEntry.cameras;
-            return (roverDetails, cameraList);
+            return cameraList;
         });
 }
 
-// data.photo_manifest
+// ROVER DETAIL CALL
+function fetchRoverDetails(rover) {
+    const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
+    const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`;
+
+    return fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            roverDetails = data.photo_manifest;
+            console.log(roverDetails);
+            console.log(roverDetails.landing_date);
+            return roverDetails
+        })
+}
+
+// The rover's "Learn More" card is populated with details from the call
+function wouldYouLikeToKnowMore(rover) {
+    
+    fetchRoverDetails(rover)
+        .then(roverDetails => {
+
+        })
+}
+
+
+// landing_date: "2021-02-18"
+// launch_date: "2020-07-30"
+// max_date: "2023-08-13"
+// max_sol: 882
+// name: "Perseverance"
+// status: "active"
+// total_photos: 174324
 
 
 // The camera select dropdown is populated with cameras from a list
