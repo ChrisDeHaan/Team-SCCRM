@@ -58,14 +58,15 @@ function fetchRoverDetails(rover) {
 
 // The rover's "Learn More" card is populated with details from the call
 function wouldYouLikeToKnowMore(rover) {
-    learnMoreEl = $(`#${rover}-details`);
+    learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
+            learnMoreEl.empty();
             learnMoreEl.append(`
-            <p>Launch Date: ${roverDetails.launch_date}</p>
-            <p>Landing Date: ${roverDetails.landing_date}</p>
-            <p>Max Sol: ${roverDetails.max_sol}</p>
-            <p>Mission Status: ${roverDetails.status}</p>
+            <p class="col-12 col-md-6 col-xl-3">Launch Date: ${roverDetails.launch_date}</p>
+            <p class="col-12 col-md-6 col-xl-3">Landing Date: ${roverDetails.landing_date}</p>
+            <p class="col-12 col-md-6 col-xl-3">Max Sol: ${roverDetails.max_sol}</p>
+            <p class="col-12 col-md-6 col-xl-3">Mission Status: ${roverDetails.status}</p>
             `)
         })
 }

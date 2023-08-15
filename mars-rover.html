@@ -52,6 +52,7 @@
         Cards contain a photo, name, and article. -->
         <section id=" rover-info-section">
             <h2 class="text-center display-3 mb-4">Meet the Rovers</h2>
+
             <!-- PERSEVERANCE -->
             <card id="perseverance-card" class="d-flex flex-column flex-md-row-reverse mb-5 col-md-11 col-12 mx-auto mt-5">
                 <img src="assets/images/rover_perseverance_avatar.jpg" class="col-12 col-md-6 col-xl-4 border-custom">
@@ -65,10 +66,6 @@
                     <a id="perseverance-learn"  class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
-            <figure id="perseverance-learn-card" class="d-flex flex-column mb-5 col-md-11 col-12 mx-auto mt-5">
-                <p id="perseverance-details"></p>
-                <img src="/assets/images/rover_curiosity_map.jpg">
-            </figure>
 
             <!-- CURIOSITY -->
             <card id="curiosity-card" class="d-flex flex-column flex-md-row mb-5 col-md-11 col-12 mx-auto">
@@ -84,10 +81,6 @@
                     <a id="curiosity-learn"  class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
-            <figure id="curiosity-learn-card" class="d-flex flex-column mb-5 col-md-11 col-12 mx-auto mt-5">
-                <p id="curiosity-details"></p>
-                <img src="/assets/images/rover_curiosity_map.jpg">
-            </figure>
 
             <!-- SPIRIT -->
             <card id="spirit-card" class="d-flex flex-column flex-md-row-reverse mb-5 col-md-11 col-12 mx-auto">
@@ -104,10 +97,6 @@
                     <a id="spirit-learn" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
-            <figure id="spirit-learn-card" class="d-flex flex-column mb-5 col-md-11 col-12 mx-auto mt-5">
-                <p id="spirit-details"></p>
-                <img src="/assets/images/rover_curiosity_map.jpg">
-            </figure>
 
             <!-- OPPORTUNITY -->
             <card id="opportunity-card" class="d-flex flex-column flex-md-row mb-5 col-md-11 col-12 mx-auto">
@@ -124,16 +113,15 @@
                     <a id="opportunity-learn" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
-            <figure id="opportunity-learn-card" class="d-flex flex-column mb-5 col-md-11 col-12 mx-auto mt-5">
-                <p id="opportunity-details"></p>
-                <img src="/assets/images/rover_curiosity_map.jpg">
-            </figure>
         </section>
-
 
         <!-- This section contains search controls for the rover images -->
         <section id="rover-search-section" class="mb-5 p-2 col-md-11 col-12 mx-auto">
             <h2 class="text-center display-3 mb-4">Search</h2>
+            <!-- WOULD YOU LIKE TO KNOW MORE -->
+            <figure id="rover-learn-card" class="d-flex flex-column col-md-11 col-12 mx-auto fs-5">
+                <p id="rover-details" class="d-flex flex-wrap justify-content-evenly"></p>
+            </figure>
             <div class="d-flex p-2">
                 <!-- Note to self: It's spelled "Perseverance" -->
                 <select id="rover-select" class="form-select">
