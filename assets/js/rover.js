@@ -48,18 +48,21 @@ function fetchRoverDetails(rover) {
         .then(response => response.json())
         .then(data => {
             roverDetails = data.photo_manifest;
-            console.log(roverDetails);
-            console.log(roverDetails.landing_date);
             return roverDetails
         })
 }
 
 // The rover's "Learn More" card is populated with details from the call
 function wouldYouLikeToKnowMore(rover) {
-    
+    learnMoreEl = $(`#${rover}-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
-
+            learnMoreEl.append(`
+            <p>Launch Date: ${roverDetails.launch_date}</p>
+            <p>Landing Date: ${roverDetails.landing_date}</p>
+            <p>Max Sol: ${roverDetails.max_sol}</p>
+            <p>Mission Status: ${roverDetails.status}</p>
+            `)
         })
 }
 
