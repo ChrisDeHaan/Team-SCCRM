@@ -64,11 +64,7 @@ a:hover {
     text-decoration: none;
 }
 
-@media screen and (max-width: 950px) {
-    .imgmap {display:none;}
-}
-
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1018px) {
     #imgmap {display:none;}
 }
 
@@ -76,4 +72,13 @@ a:hover {
     display: none !important;
 }
 
+@media (max-width: 575.98px) {
+    .dbImg {float:none;}
+}
+
+@media (max-width: 575.98px) {
+    .title {float:none;}
+}
+
 /* Develop by END */
+

@@ -18,7 +18,7 @@ var apodExplanationEl = document.getElementById('explanationApod')
 var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
 
-// currentDayCall(currentDayApod) // load the current day's APOD on page load
+currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // catch wasn't working for 404 error, so this will load our 404 img in those cases instead
 document.addEventListener('error', e => {
@@ -28,7 +28,7 @@ document.addEventListener('error', e => {
 // Event Listeners
 var apodDiv = document.getElementById('currentApodImg') // random day listener elements
 
-apodDiv.addEventListener("click", () => { 
+apodDiv.addEventListener("click", () => {
     randomDayCall(randomDayApod)
 })
 
@@ -55,13 +55,13 @@ monthSelectEl.addEventListener('click', () => { // populates month
         if (monthSelectEl.length !== 8) {
             dynamicMonths(5, 12)
         } else { return }
-    // second, check for current year
+        // second, check for current year
     } else if (yearSelectEl.value === currentYear) {
-        var tempNum = Number(currentMonthNumbers)+1 // need the length +1 to include the option with 'Month'
+        var tempNum = Number(currentMonthNumbers) + 1 // need the length +1 to include the option with 'Month'
         if (monthSelectEl.length !== Number(tempNum)) {
             dynamicMonths(0, Number(currentMonthNumbers))
         } else { return }
-    // all other months will just have all 12 months
+        // all other months will just have all 12 months
     } else {
         if (monthSelectEl.length !== 13) {
             dynamicMonths(0, 12)
@@ -77,37 +77,37 @@ daySelectEl.addEventListener('click', () => { // populates days
         if (daySelectEl.length !== 30) {
             dynamicDays(1, 30)
         } else { return }; // this is used to not repopulate the list if it already has the correct number of days
-    // second, check for first year and month of APOD
+        // second, check for first year and month of APOD
     } else if (yearSelectEl.value === '1995' && monthSelectEl.value === 'Jun') {
         if (daySelectEl.length !== 13) { // can't use dynamic days because there is a gap from 16th to 20th
             daySelectEl.innerHTML = `<option selected>Day</option><option>16</option>`
-            for ( i = 20; i < 31; i++) {
+            for (i = 20; i < 31; i++) {
                 daySelectEl.innerHTML += `
                 <option>${i}</option>
                 `
             }
-        } else { return }     
-    // third, check for current year & month
-    } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonthLetters) {
-        if (daySelectEl.length !== (daysInCurrentMonth+1)) {
-            dynamicDays(1, (daysInCurrentMonth+1)) // needs to be +1 to account for option 'Day'
         } else { return }
-    // fourth, check for feb
+        // third, check for current year & month
+    } else if (yearSelectEl.value === currentYear && monthSelectEl.value === currentMonthLetters) {
+        if (daySelectEl.length !== (daysInCurrentMonth + 1)) {
+            dynamicDays(1, (daysInCurrentMonth + 1)) // needs to be +1 to account for option 'Day'
+        } else { return }
+        // fourth, check for feb
     } else if (monthSelectEl.value === 'Feb') {
         if (daySelectEl.length !== 29) {
             dynamicDays(1, 29)
         } else { return }
-    // fifth, check for months with 30 days
+        // fifth, check for months with 30 days
     } else if (monthSelectEl.value === 'Apr' || monthSelectEl.value === 'Jun' ||
-            monthSelectEl.value === 'Sep' || monthSelectEl.value === 'Nov') {
+        monthSelectEl.value === 'Sep' || monthSelectEl.value === 'Nov') {
         if (daySelectEl.length !== 31) {
             dynamicDays(1, 31)
         } else { return }
-    // sixth, check for months with 31 days
+        // sixth, check for months with 31 days
     } else if (monthSelectEl.value === 'Jan' || monthSelectEl.value === 'Mar' || monthSelectEl.value === 'May' ||
-            monthSelectEl.value === 'Jul' || monthSelectEl.value === 'Aug' || monthSelectEl.value === 'Oct' ||
-            monthSelectEl.value === 'Dec') {
-        if (daySelectEl.length !== 32){
+        monthSelectEl.value === 'Jul' || monthSelectEl.value === 'Aug' || monthSelectEl.value === 'Oct' ||
+        monthSelectEl.value === 'Dec') {
+        if (daySelectEl.length !== 32) {
             dynamicDays(1, 32)
         } else { return }
     }
@@ -148,7 +148,7 @@ searchBtnEl.addEventListener('click', () => { // loads the selected date's APOD
     var Year = yearSelectEl.value
     var Day = daySelectEl.value
     var Month = monthSelectEl.value
-        Month = (monthArray.indexOf(Month)+1).toString(); // need to turn our MMM into MM using its' position in the array
+    Month = (monthArray.indexOf(Month) + 1).toString(); // need to turn our MMM into MM using its' position in the array
     var specificDayApod = `https://api.nasa.gov/planetary/apod?api_key=${apodAPI}&date=${Year}-${Month}-${Day}`
     currentDayCall(specificDayApod)
 })
@@ -160,16 +160,24 @@ var imgGalleryEl = document.getElementById('img-Gallery')
 displaySavedImages(savedPicturesArray) // display gallery on page load
 
 saveBtnEl.addEventListener('click', () => {
-    savedPicturesArray.push( {
-            HDUrl: apodImgEl.src,
-            date: apodDateEl.textContent,
-            title: apodTitleEl.textContent,
-            copyright: apodCopyrightEl.textContent,
-        })
+    savedPicturesArray.push({
+        HDUrl: apodImgEl.src,
+        date: apodDateEl.textContent,
+        title: apodTitleEl.textContent,
+        copyright: apodCopyrightEl.textContent,
+    })
 
     localStorage.setItem('saved-pictures', JSON.stringify(savedPicturesArray))
 
     displaySavedImages(savedPicturesArray)
+})
+
+//variable for clearing localStorage
+var clearBtnEl = document.getElementById('clearStorage')
+
+clearBtnEl.addEventListener("click", () => { // deletes all items in localStorage
+    localStorage.clear()
+    displaySavedImages()
 })
 
 function currentDayCall(api) { // function to load the current day's APOD
@@ -212,7 +220,7 @@ function randomDayCall(api) { // function for random APODs
         })
 }
 
-function dynamicDays (x, length) { // function used to populate the days dropdown list
+function dynamicDays(x, length) { // function used to populate the days dropdown list
     daySelectEl.innerHTML = `<option selected>Day</option>`
     for (i = x; i < length; i++) {
         daySelectEl.innerHTML += `
@@ -221,27 +229,28 @@ function dynamicDays (x, length) { // function used to populate the days dropdow
     }
 }
 
-function dynamicMonths (x, length) { // function used to populate the months dropdown list
+function dynamicMonths(x, length) { // function used to populate the months dropdown list
     monthSelectEl.innerHTML = `<option selected>Month</option>`
-    for ( i = x ; i < length; i++) {
+    for (i = x; i < length; i++) {
         monthSelectEl.innerHTML += `
         <option>${monthArray[i]}</option>
         `
     }
 }
 
-function disableAttrAdd (element) { // function used to add the disabled attribute
+function disableAttrAdd(element) { // function used to add the disabled attribute
     element.setAttribute('disabled', '')
 }
 
-function disableAttrRemove (element) { // function used to remove the disabled attribute
+function disableAttrRemove(element) { // function used to remove the disabled attribute
     element.removeAttribute('disabled')
 }
 
-function displaySavedImages (array) {
-    imgGalleryEl.innerHTML = '' // reset the Gallery
-    for ( i = (array.length-1); i >= 0; i--) {
-        imgGalleryEl.innerHTML += `
+function displaySavedImages(array) {
+    if (array !== undefined) { // need this is in order to reset Gallery after deleting localStorage
+        imgGalleryEl.innerHTML = '' // reset the Gallery
+        for (i = (array.length - 1); i >= 0; i--) {
+            imgGalleryEl.innerHTML += `
         <div class="col-12 col-md-6 mx-auto my-3">
             <div class="h5">${array[i].date}</div>
             <a href=${array[i].HDUrl}
@@ -253,5 +262,8 @@ function displaySavedImages (array) {
             <figcaption class="mt-2">${array[i].copyright}</figcaption>
         </div>
         `
+        }
+    } else {
+        imgGalleryEl.innerHTML = ''
     }
 }
