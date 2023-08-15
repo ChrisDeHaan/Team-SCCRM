@@ -2,28 +2,9 @@
 
 ## Description
 
-AS A space enthusiast <br>
-I WANT a one-stop source to view cool space photos and consume NASA information <br>
-SO THAT I can satiate my cosmic curiosity
+We created this website as a way to combine 2 of NASA's popular API's that provide photos from the Mars Rovers and the Astronomy Picture of the Day. The intended user is one who appreciates photos of/about/from space who wants easier access to up-to-date NASA photos. Our website uses an intuitive and responsive design in order to deliver the easiest experience for users searching or browsing through these images. 
 
-WHEN I load the webpage <br>
-THEN I am presented with a homepage with a navbar, paragraph explaining the website, quote from an astronomer,<br> and space art or photo
-
-WHEN I view the navbar <br>
-THEN I have an option for the mars rovers, astronomy picture of the day, and a developed by
-
-WHEN I select the mars rover option <br>
-THEN I am brought to the mars rover webpage, powered by the Mars Rover Photos API <br>
-THEN I am presented with Rover information, a brief description, a search function to view rover photos from Mars
-
-WHEN I select the astronomy picture of the day option <br>
-THEN I am brought to the astronomy picture of the day page powered by the APOD API <br>
-THEN I am presented with the picture for that day, a brief description, a search function to find previous daily photos, and a section where saved pictures are presented
-
-WHEN I select the developed by option <br>
-THEN i am brought to the developed by page and presented with all of our pictures, LinkedIns, and Github links
-
-## Made in collaboration by
+## Collaborators:
 
 - <a href="https://github.com/Elrond-Hubbard">Michael Marsolo</a>
 - <a href="https://github.com/ChrisDeHaan">Christopher DeHaan</a>
@@ -37,6 +18,17 @@ https://chrisdehaan.github.io/Team-SCCRM/
 
 ## Mock-Ups
 
+### Mobile:
+![mobile-mock-up](./assets/images/mock-up-mobile.png)
+### Web:
+![website-mock-up](./assets/images/mock-up-web.png)
+
+## Technologies Used
+
+- Bootstrap v5.3
+- JQuery v3.7.0
+- DayJS
+- Midjourney
 
 ## References
 
@@ -49,6 +41,8 @@ https://chrisdehaan.github.io/Team-SCCRM/
 - <a href ="https://stackoverflow.com/questions/10422949/css-background-opacity">rgba explanation and use</a>
 - <a href ="https://www.amitmerchant.com/shine-animation-on-hover-using-css/">shine effect</a>
 - <a href ="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity">centering caption in image</a>
+- <a href ="https://spacequotations.com/quotes-about-space/">quotes</a>
+- <a href ="http://www.seasky.org/quotes/space-quotes-astronomy.html">more quotes</a>
 
 ## License
 
