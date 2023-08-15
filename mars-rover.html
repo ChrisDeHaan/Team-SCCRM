@@ -52,6 +52,7 @@
         Cards contain a photo, name, and article. -->
         <section id=" rover-info-section">
             <h2 class="text-center display-3 mb-4">Meet the Rovers</h2>
+
             <!-- PERSEVERANCE -->
             <card id="perseverance-card" class="d-flex flex-column flex-md-row-reverse mb-5 col-md-11 col-12 mx-auto mt-5">
                 <img src="assets/images/rover_perseverance_avatar.jpg" class="col-12 col-md-6 col-xl-4 border-custom">
@@ -62,9 +63,10 @@
                         It is designed to seek signs of past microbial life and collect samples for future return missions to Earth. 
                         It also carries the Ingenuity helicopter, which successfully demonstrated powered flight in the thin Martian atmosphere.
                     </p>
-                    <a href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
+                    <a id="perseverance-learn" href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
+
             <!-- CURIOSITY -->
             <card id="curiosity-card" class="d-flex flex-column flex-md-row mb-5 col-md-11 col-12 mx-auto">
                 <img src="assets/images/rover_curiosity_avatar.jpg" class="col-12 col-md-6 col-xl-4 border-custom">
@@ -76,9 +78,10 @@
                         been exploring Gale Crater since its landing in 2012 and has provided significant 
                         insights into Mars' ancient habitability.
                     </p>
-                    <a href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
+                    <a id="curiosity-learn" href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
+
             <!-- SPIRIT -->
             <card id="spirit-card" class="d-flex flex-column flex-md-row-reverse mb-5 col-md-11 col-12 mx-auto">
                 <img src="assets/images/rover_spirit_avatar.jpg" class="col-12 col-md-6 col-xl-4 border-custom">
@@ -91,9 +94,10 @@
                         water activity and volcanic history. Spirit's mission lasted well beyond its initial 
                         90-day design, ultimately ceasing communications in 2010.
                     </p>
-                    <a href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
+                    <a id="spirit-learn" href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
+
             <!-- OPPORTUNITY -->
             <card id="opportunity-card" class="d-flex flex-column flex-md-row mb-5 col-md-11 col-12 mx-auto">
                 <img src="assets/images/rover_opportunity_avatar.jpg" class="col-12 col-md-6 col-xl-4 border-custom">
@@ -106,32 +110,34 @@
                         a longevity record, operating for over 14 years until a massive dust storm in 2018 led 
                         to the end of its mission.
                     </p>
-                    <a href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
+                    <a id="opportunity-learn" href="#rover-search-section" class="btn btn-save-custom fw-bold">Learn More</a>
                 </div>
             </card>
         </section>
 
-
         <!-- This section contains search controls for the rover images -->
         <section id="rover-search-section" class="mb-5 p-2 col-md-11 col-12 mx-auto">
             <h2 class="text-center display-3 mb-4">Search</h2>
+            <!-- WOULD YOU LIKE TO KNOW MORE -->
+            <figure id="rover-learn-card" class="d-flex flex-column col-md-11 col-12 mx-auto fs-5">
+                <p id="rover-details" class="d-flex flex-wrap justify-content-evenly"></p>
+            </figure>
             <div class="d-flex p-2">
                 <!-- Note to self: It's spelled "Perseverance" -->
-                <select id="rover-select" class="form-select">
+                <select id="rover-select" class="form-select fs-5">
                     <option selected>Select a Rover</option>
                     <option value="perseverance">Perseverance</option>
                     <option value="curiosity">Curiosity</option>
                     <option value="opportunity">Opportunity</option>
                     <option value="spirit">Spirit</option>
                 </select>
-                <input id="rover-sol-input" class="form-control form-control-lg ms-1" type="text" placeholder="sol date">
+                <input id="rover-sol-input" class="form-control form-control-lg ms-1" type="number" placeholder="Enter Sol Date">
                 <button id="rover-search" type="button" class="btn btn-save-custom ms-1 fw-bold">Search</button>
             </div>
             <div id="rover-cam-filter" class="d-none p-2">
                 <h3 class="text-center">Filter by Camera</h3>
                 <select id="rover-cam-select" class="form-select"></select>
             </div>
-
         </section>
 
 
