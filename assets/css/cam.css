@@ -58,6 +58,9 @@ body {
         /* justify-self: right; */
        margin-left: 50%;
     }
+    #navbar{
+        text-align: right;
+    }
     
 }
 
