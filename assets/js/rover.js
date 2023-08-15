@@ -109,20 +109,16 @@ function createImageCards(photos) {
 $(document).ready(function() {
 
     perseveranceLearnEl.on('click', function() {
-        wouldYouLikeToKnowMore('perseverance');
-        roverSelectEl.children("option[value=perseverance]").attr('selected', 'selected');
+        roverSelectEl.children("option[value=perseverance]").attr('selected', 'selected').trigger('input');
     })
     curiosityLearnEl.on('click', function() {
-        wouldYouLikeToKnowMore('curiosity')
-        roverSelectEl.children("option[value=curiosity]").attr('selected', 'selected');
+        roverSelectEl.children("option[value=curiosity]").attr('selected', 'selected').trigger('input');
     })
     opportunityLearnEl.on('click', function() {
-        wouldYouLikeToKnowMore('opportunity')
-        roverSelectEl.children("option[value=opportunity]").attr('selected', 'selected');
+        roverSelectEl.children("option[value=opportunity]").attr('selected', 'selected').trigger('input');
     })
     spiritLearnEl.on('click', function() {
-        wouldYouLikeToKnowMore('spirit')
-        roverSelectEl.children("option[value=spirit]").attr('selected', 'selected');
+        roverSelectEl.children("option[value=spirit]").attr('selected', 'selected').trigger('input');
     })
 
     roverSelectEl.on('input', function(rover) {
