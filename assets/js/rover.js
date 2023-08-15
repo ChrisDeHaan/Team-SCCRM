@@ -110,15 +110,19 @@ $(document).ready(function() {
 
     perseveranceLearnEl.on('click', function() {
         wouldYouLikeToKnowMore('perseverance');
+        roverSelectEl.children("option[value=perseverance]").attr('selected', 'selected');
     })
     curiosityLearnEl.on('click', function() {
         wouldYouLikeToKnowMore('curiosity')
+        roverSelectEl.children("option[value=curiosity]").attr('selected', 'selected');
     })
     opportunityLearnEl.on('click', function() {
         wouldYouLikeToKnowMore('opportunity')
+        roverSelectEl.children("option[value=opportunity]").attr('selected', 'selected');
     })
     spiritLearnEl.on('click', function() {
         wouldYouLikeToKnowMore('spirit')
+        roverSelectEl.children("option[value=spirit]").attr('selected', 'selected');
     })
 
 
