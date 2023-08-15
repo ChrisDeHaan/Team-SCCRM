@@ -5,16 +5,17 @@
 
 
 // ELEMENTS
-galleryEl = $('#rover-gallery-display');
-roverSelectEl = $('#rover-select');
-cameraSelectEl = $('#rover-cam-select');
-solDateEl = $('#rover-sol-input');
-searchButtonEl = $('#rover-search');
-camFilterEl = $('#rover-cam-filter');
-perseveranceLearnEl = $('#perseverance-learn')
-curiosityLearnEl = $('#curiosity-learn')
-opportunityLearnEl = $('#opportunity-learn')
-spiritLearnEl = $('#spirit-learn')
+const galleryEl = $('#rover-gallery-display');
+const roverSelectEl = $('#rover-select');
+const cameraSelectEl = $('#rover-cam-select');
+const solDateEl = $('#rover-sol-input');
+const searchButtonEl = $('#rover-search');
+const camFilterEl = $('#rover-cam-filter');
+const perseveranceLearnEl = $('#perseverance-learn')
+const curiosityLearnEl = $('#curiosity-learn')
+const opportunityLearnEl = $('#opportunity-learn')
+const spiritLearnEl = $('#spirit-learn')
+
 
 // PHOTO API CALL
 function fetchRoverPhotos(rover, solDate) {
@@ -28,6 +29,7 @@ function fetchRoverPhotos(rover, solDate) {
             return data.photos
         })
 }
+
 
 // CAMERA MANIFEST API CALL
 function fetchCameraManifest(rover, solDate) {
@@ -43,7 +45,8 @@ function fetchCameraManifest(rover, solDate) {
         });
 }
 
-// ROVER DETAIL CALL
+
+// ROVER DETAILS CALL
 function fetchRoverDetails(rover) {
     const apiKey = 'kQeFd8fXdPz7FZR4IshISXPpTJ7ZjB6Wo9gfxrpr';
     const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`;
@@ -56,7 +59,15 @@ function fetchRoverDetails(rover) {
         })
 }
 
+
 // The rover's "Learn More" card is populated with details from the call
+// landing_date: "2021-02-18"
+// launch_date: "2020-07-30"
+// max_date: "2023-08-13"
+// max_sol: 882
+// name: "Perseverance"
+// status: "active"
+// total_photos: 174324
 function wouldYouLikeToKnowMore(rover) {
     learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
@@ -68,17 +79,10 @@ function wouldYouLikeToKnowMore(rover) {
             <p class="col-12 col-md-6 col-xl-3">Landing Date: ${roverDetails.landing_date}</p>
             <p class="col-12 col-md-6 col-xl-3">Mission Status: ${roverDetails.status}</p>
             `)
+            maxDate = roverDetails.max_sol;
+            return maxDate;
         })
 }
-
-
-// landing_date: "2021-02-18"
-// launch_date: "2020-07-30"
-// max_date: "2023-08-13"
-// max_sol: 882
-// name: "Perseverance"
-// status: "active"
-// total_photos: 174324
 
 
 // The camera select dropdown is populated with cameras from a list
@@ -106,6 +110,7 @@ function createImageCards(photos) {
     });
 }
 
+// .ready handles all input events on the page
 $(document).ready(function() {
 
     perseveranceLearnEl.on('click', function() {
@@ -130,6 +135,8 @@ $(document).ready(function() {
     searchButtonEl.on('click', function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
+        // DO SOMETHING ABOUT BAD DATES!!
+        if (solDate > maxDate) {console.log('Bad dates!')}
         fetchRoverPhotos(rover, solDate)
             .then(photos => {
                 createImageCards(photos);
@@ -145,7 +152,7 @@ $(document).ready(function() {
         const selectedFilter = $(this).children('option:selected').val();
         $('.rover-image-card').each(function() {
             const cardCamera = $(this).data('camera');
-            $(this).toggle(cardCamera === selectedFilter);
+            $(this).toggle(cardCamera === selectedFilter);//If true, show. If false, hide.
         });
     });
 });
