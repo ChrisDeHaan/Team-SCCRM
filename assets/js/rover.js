@@ -126,6 +126,14 @@ function errorLog(error) {
     `)
 }
 
+// A loading indicator is displayed in the gallery
+function reticulatingSplines() {
+    galleryEl.empty();
+    galleryEl.append(`
+    <i class="spinner-border" style="width: 10rem; height: 10rem;" role="status"></i>
+    `)
+}
+
 
 // .ready handles all input events on the page
 $(document).ready(function() {
@@ -142,6 +150,7 @@ $(document).ready(function() {
 
 
     searchButtonEl.on('click', function() {
+        reticulatingSplines();
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
         fetchRoverPhotos(rover, solDate)
