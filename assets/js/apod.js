@@ -80,7 +80,7 @@ daySelectEl.addEventListener('click', () => { // populates days
     // second, check for first year and month of APOD
     } else if (yearSelectEl.value === '1995' && monthSelectEl.value === 'Jun') {
         if (daySelectEl.length !== 13) { // can't use dynamic days because there is a gap from 16th to 20th
-            daySelectEl.innerHTML = `<option selected>Day</option><option selected>16</option>`
+            daySelectEl.innerHTML = `<option selected>Day</option><option>16</option>`
             for ( i = 20; i < 31; i++) {
                 daySelectEl.innerHTML += `
                 <option>${i}</option>
