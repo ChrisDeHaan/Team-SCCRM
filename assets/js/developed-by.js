@@ -12,8 +12,31 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log(targetId)
 
             if (targetCard) {
-                targetCard.classList.toggle("hidden"); // Toggle the "hidden" class
+                targetCard.classList.toggle("hidden"); 
             }
         });
     });
 });
+
+
+function handleScreenSize() {
+    var screenSize = window.innerWidth;
+    var hiddenElements = document.querySelectorAll('.hidden');
+
+    hiddenElements.forEach(function(element) {
+        if (screenSize < 951) {
+            element.classList.remove('hidden');
+        } else {
+            element.classList.add('hidden');
+        }
+    });
+}
+
+// Call the function initially and on window resize
+window.addEventListener('resize', handleScreenSize);
+
+// Call the function when the page is fully loaded
+window.addEventListener('load', handleScreenSize);
+
+
+
