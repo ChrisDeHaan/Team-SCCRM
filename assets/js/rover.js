@@ -61,12 +61,11 @@ function wouldYouLikeToKnowMore(rover) {
     learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
-            solDateEl.attr('placeholder', `Max Sol: ${roverDetails.max_sol}`)
+            solDateEl.attr('placeholder', `Enter Sol Date (Max Sol: ${roverDetails.max_sol})`)
             learnMoreEl.empty();
             learnMoreEl.append(`
             <p class="col-12 col-md-6 col-xl-3">Launch Date: ${roverDetails.launch_date}</p>
             <p class="col-12 col-md-6 col-xl-3">Landing Date: ${roverDetails.landing_date}</p>
-            <p class="col-12 col-md-6 col-xl-3">Max Sol: ${roverDetails.max_sol}</p>
             <p class="col-12 col-md-6 col-xl-3">Mission Status: ${roverDetails.status}</p>
             `)
         })
