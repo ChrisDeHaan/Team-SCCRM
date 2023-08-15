@@ -94,6 +94,7 @@ function updateCameraSelect(cameraList) {
     });
 }
 
+
 // An image card is created and labeled for each photo in the return
 function createImageCards(photos) {
     galleryEl.empty();
@@ -110,22 +111,38 @@ function createImageCards(photos) {
     });
 }
 
+
+// An error message is displayed in the gallery container
+function errorLog(error) {
+    galleryEl.empty();
+    galleryEl.append(`
+        <div id="rover-error" class="card overflow-hidden col-12 col-sm-6 col-md-4 col-lg-3" style="height: 50%; overflow:auto;">
+            <img src="assets/images/rover_error.jpg" class="card-img-top overflow-hidden" style="object-fit:cover">
+            <div class="card-body">
+                <h3 class="card-text">ERROR:</h3>
+                <p class="card-text fs-5">${error}</p>
+            </div>
+        </div>
+    `)
+}
+
+// A loading indicator is displayed in the gallery
+function reticulatingSplines() {
+    galleryEl.empty();
+    galleryEl.append(`
+    <i class="spinner-border" style="width: 10rem; height: 10rem;" role="status"></i>
+    `)
+}
+
+
 // .ready handles all input events on the page
 $(document).ready(function() {
 
-    perseveranceLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=perseverance]").attr('selected', 'selected').trigger('input');
-    })
-    curiosityLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=curiosity]").attr('selected', 'selected').trigger('input');
-    })
-    opportunityLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=opportunity]").attr('selected', 'selected').trigger('input');
-    })
-    spiritLearnEl.on('click', function() {
-        roverSelectEl.children("option[value=spirit]").attr('selected', 'selected').trigger('input');
-    })
-
+    // Learn More buttons pass input to rover dropdown menu
+    perseveranceLearnEl.on('click', function() {roverSelectEl.val('perseverance').trigger('input');})
+    curiosityLearnEl.on('click', function() {roverSelectEl.val('curiosity').trigger('input');})
+    spiritLearnEl.on('click', function() {roverSelectEl.val('spirit').trigger('input');})
+    opportunityLearnEl.on('click', function() {roverSelectEl.val('opportunity').trigger('input');})
     roverSelectEl.on('input', function(rover) {
         rover = roverSelectEl.val();
         wouldYouLikeToKnowMore(rover);
@@ -133,20 +150,22 @@ $(document).ready(function() {
 
 
     searchButtonEl.on('click', function() {
+        reticulatingSplines();
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
-        // DO SOMETHING ABOUT BAD DATES!!
-        if (solDate > maxDate) {console.log('Bad dates!')}
         fetchRoverPhotos(rover, solDate)
             .then(photos => {
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
+                if (solDate > maxDate) {errorLog('You exceeded the max sol date!')}
             });
         fetchCameraManifest(rover, solDate)
             .then(cameraList => {
                 updateCameraSelect(cameraList)
             })
     });
+
+
     // Gallery is filtered based on currently selected camera
     cameraSelectEl.on('input', function() {
         const selectedFilter = $(this).children('option:selected').val();
