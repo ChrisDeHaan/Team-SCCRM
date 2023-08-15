@@ -61,6 +61,7 @@ function wouldYouLikeToKnowMore(rover) {
     learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
+            solDateEl.attr('placeholder', `Max Sol: ${roverDetails.max_sol}`)
             learnMoreEl.empty();
             learnMoreEl.append(`
             <p class="col-12 col-md-6 col-xl-3">Launch Date: ${roverDetails.launch_date}</p>
@@ -123,6 +124,11 @@ $(document).ready(function() {
     spiritLearnEl.on('click', function() {
         wouldYouLikeToKnowMore('spirit')
         roverSelectEl.children("option[value=spirit]").attr('selected', 'selected');
+    })
+
+    roverSelectEl.on('input', function(rover) {
+        rover = roverSelectEl.val();
+        wouldYouLikeToKnowMore(rover);
     })
 
 
