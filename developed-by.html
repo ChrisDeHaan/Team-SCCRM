@@ -16,38 +16,40 @@
 
 <body>
     <header>
-        <nav id="navbar" class="navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="developed-by.html">
-                <div class="logo-image logo-container">
-                    <img src="assets/images/logo2" class="img-fluid" id="logo">
-                    <!-- <p id="team">Team </p> 
-                        <p id="SCCRM">SCCRM</p> -->
-                </div>
-            </a>
-            <div id="navButtons" class="container-fluid ">
-                <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span id="navBtn" class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                    <div id="navbar" class="navbar-nav ml-auto">
-                        <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
-                        <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
-                        <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
-                        <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
-                    </div>
-                </div>
+        <nav id="navbar" class="navbar navbar-expand-lg big-screen">
+          <a class="navbar-brand" >
+            <div class="logo-image d-flex align-items-center logo-container">
+              <img src="assets/images/logo2" class="img-fluid d-flex align-items-center" id="logo">
+              <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span id="navBtn" class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+          </a>
+        
+            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+              <div id="navbar" class="navbar-nav ml-auto">
+                <a id="navlinks" class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a id="navlinks" class="nav-link" href="mars-rover.html">Mars Rover</a>
+                <a id="navlinks" class="nav-link" href="apod.html">APOD</a>
+                <a id="navlinks" class="nav-link" href="developed-by.html">Developed By</a>
+    
+              </div>
+            </div>
+          </div>
         </nav>
     </header>
     <!-- <a href="index.html">Homepage</a><br>
     <a href="apod.html">Astronomy Picture of the Day</a><br>
     <a href="mars-rover.html">Mars Rover</a><br> -->
-    <main class="containerDb col-10 mx-auto mb-3 mt-2" style="max-width: 1440px;">
-        <h2 class="dbH2">Meet the developers!</h2>
+    <main class="containerDb col-10 mx-auto mb-3 mt-2 text-center" style="max-width: 1440px;">
+        <h2 class="dbH2 display-3">Meet the developers!</h2>
 
-        <div class="card mb-3 mt-3 mx-auto" id="imgmap" style="max-width: 800px;">
-            <img src="./assets/images/solar system2.png" class="imgmap" usemap="#image-map">
+        <div class="card mb-3 mt-3 mx-auto border-custom" id="imgmap" style="max-width: 839px; min-height: 839px; height: 823px; width: 823 px;">
+            <img src="./assets/images/solar_system2.png" class="imgmap rounded" usemap="#image-map" id="imgUpper">
+            <img src="./assets/images/solar_system2-highlighted.png" id="imgLower" usemap="#image-map">
+
 
             <map name="image-map">
                 <area target="_self" alt="Christopher" title="Christopher" href="#chris" coords="135,386,41"
