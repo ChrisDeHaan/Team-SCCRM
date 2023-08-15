@@ -11,6 +11,10 @@ cameraSelectEl = $('#rover-cam-select');
 solDateEl = $('#rover-sol-input');
 searchButtonEl = $('#rover-search');
 camFilterEl = $('#rover-cam-filter');
+perseveranceLearnEl = $('#perseverance-learn')
+curiosityLearnEl = $('#curiosity-learn')
+opportunityLearnEl = $('#opportunity-learn')
+spiritLearnEl = $('#spirit-learn')
 
 // PHOTO API CALL
 function fetchRoverPhotos(rover, solDate) {
@@ -102,6 +106,21 @@ function createImageCards(photos) {
 }
 
 $(document).ready(function() {
+
+    perseveranceLearnEl.on('click', function() {
+        wouldYouLikeToKnowMore('perseverance');
+    })
+    curiosityLearnEl.on('click', function() {
+        wouldYouLikeToKnowMore('curiosity')
+    })
+    opportunityLearnEl.on('click', function() {
+        wouldYouLikeToKnowMore('opportunity')
+    })
+    spiritLearnEl.on('click', function() {
+        wouldYouLikeToKnowMore('spirit')
+    })
+
+
     searchButtonEl.on('click', function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
