@@ -111,6 +111,22 @@ function createImageCards(photos) {
     });
 }
 
+
+// An error message is displayed in the gallery container
+function errorLog(error) {
+    galleryEl.empty();
+    galleryEl.append(`
+        <div id="rover-error" class="card overflow-hidden col-12 col-sm-6 col-md-4 col-lg-3" style="height: 50%; overflow:auto;">
+            <img src="assets/images/rover_error.jpg" class="card-img-top overflow-hidden" style="object-fit:cover">
+            <div class="card-body">
+                <h3 class="card-text">ERROR:</h3>
+                <p class="card-text fs-5">${error}</p>
+            </div>
+        </div>
+    `)
+}
+
+
 // .ready handles all input events on the page
 $(document).ready(function() {
 
@@ -119,22 +135,20 @@ $(document).ready(function() {
     curiosityLearnEl.on('click', function() {roverSelectEl.val('curiosity').trigger('input');})
     spiritLearnEl.on('click', function() {roverSelectEl.val('spirit').trigger('input');})
     opportunityLearnEl.on('click', function() {roverSelectEl.val('opportunity').trigger('input');})
-    
     roverSelectEl.on('input', function(rover) {
         rover = roverSelectEl.val();
         wouldYouLikeToKnowMore(rover);
     })
 
-    
+
     searchButtonEl.on('click', function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
-        // DO SOMETHING ABOUT BAD DATES!!
-        if (solDate > maxDate) {console.log('Bad dates!')}
         fetchRoverPhotos(rover, solDate)
             .then(photos => {
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
+                if (solDate > maxDate) {errorLog('You exceeded the max sol date!')}
             });
         fetchCameraManifest(rover, solDate)
             .then(cameraList => {
