@@ -21,11 +21,6 @@ var apodContainerEl = document.getElementById('apodContainer')
 
 currentDayCall(currentDayApod) // load the current day's APOD on page load
 
-// catch wasn't working for 404 error, so this will load our 404 img in those cases instead
-document.addEventListener('error', e => {
-    apodImgEl.src = './assets/images/404.jpg'
-}, true);
-
 // Event Listeners
 var apodDiv = document.getElementById('currentApodImg') // random day listener elements
 
@@ -186,8 +181,14 @@ function currentDayCall(api) { // function to load the current day's APOD
     fetch(api)
         .then(response => response.json())
         .then(data => {
+            var imageSrc
+            if (data.hdurl === undefined) {
+                imageSrc = "./assets/images/404.jpg"
+            } else {
+                imageSrc = data.hdurl
+            }
             apodDateEl.textContent = `${data.date.slice(5, 10)}-${data.date.slice(0, 4)}` // rearrange the date
-            displayApodDiv(data.hdurl)
+            displayApodDiv(imageSrc)
             apodTitleEl.textContent = data.title
             apodExplanationEl.textContent = data.explanation
             var copyright = data.copyright
@@ -207,8 +208,14 @@ function randomDayCall(api) { // function for random APODs
     fetch(api)
         .then(response => response.json())
         .then(data => {
+            var imageSrc
+            if (data[0].hdurl === undefined) {
+                imageSrc = "./assets/images/404.jpg"
+            } else {
+                imageSrc = data[0].hdurl
+            }
             apodDateEl.textContent = `${data[0].date.slice(5, 10)}-${data[0].date.slice(0, 4)}` // rearrange the date
-            displayApodDiv(data[0].hdurl)
+            displayApodDiv(imageSrc)
             apodTitleEl.textContent = data[0].title
             apodExplanationEl.textContent = data[0].explanation
             var copyright = data[0].copyright
