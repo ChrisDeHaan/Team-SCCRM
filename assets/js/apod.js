@@ -17,8 +17,9 @@ var apodImgEl = document.getElementById('currentApodImg')
 var apodExplanationEl = document.getElementById('explanationApod')
 var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
+var apodContainerEl = document.getElementById('apodContainer')
 
-currentDayCall(currentDayApod) // load the current day's APOD on page load
+// currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // catch wasn't working for 404 error, so this will load our 404 img in those cases instead
 document.addEventListener('error', e => {
@@ -28,7 +29,7 @@ document.addEventListener('error', e => {
 // Event Listeners
 var apodDiv = document.getElementById('currentApodImg') // random day listener elements
 
-apodDiv.addEventListener("click", () => {
+apodContainerEl.addEventListener("click", () => {
     randomDayCall(randomDayApod)
 })
 
@@ -161,7 +162,7 @@ displaySavedImages(savedPicturesArray) // display gallery on page load
 
 saveBtnEl.addEventListener('click', () => {
     savedPicturesArray.push({
-        HDUrl: apodImgEl.src,
+        HDUrl: apodContainerEl.children[0].src,
         date: apodDateEl.textContent,
         title: apodTitleEl.textContent,
         copyright: apodCopyrightEl.textContent,
@@ -181,11 +182,12 @@ clearBtnEl.addEventListener("click", () => { // deletes all items in localStorag
 })
 
 function currentDayCall(api) { // function to load the current day's APOD
+    apodContainerEl.innerHTML = `<i class="spinner-border" style="width: 10rem; height: 10rem;" role="status">`
     fetch(api)
         .then(response => response.json())
         .then(data => {
             apodDateEl.textContent = `${data.date.slice(5, 10)}-${data.date.slice(0, 4)}` // rearrange the date
-            apodImgEl.src = data.hdurl
+            displayApodDiv(data.hdurl)
             apodTitleEl.textContent = data.title
             apodExplanationEl.textContent = data.explanation
             var copyright = data.copyright
@@ -201,11 +203,12 @@ function currentDayCall(api) { // function to load the current day's APOD
 }
 
 function randomDayCall(api) { // function for random APODs
+    apodContainerEl.innerHTML = `<i class="spinner-border" style="width: 10rem; height: 10rem;" role="status">`
     fetch(api)
         .then(response => response.json())
         .then(data => {
             apodDateEl.textContent = `${data[0].date.slice(5, 10)}-${data[0].date.slice(0, 4)}` // rearrange the date
-            apodImgEl.src = data[0].hdurl
+            displayApodDiv(data[0].hdurl)
             apodTitleEl.textContent = data[0].title
             apodExplanationEl.textContent = data[0].explanation
             var copyright = data[0].copyright
@@ -244,6 +247,16 @@ function disableAttrAdd(element) { // function used to add the disabled attribut
 
 function disableAttrRemove(element) { // function used to remove the disabled attribute
     element.removeAttribute('disabled')
+}
+
+function displayApodDiv (image) { // need this to redisplay the APOD image
+    apodContainerEl.innerHTML = `
+    <img src=${image} alt='Astronomy Picture of the Day' class="img-fluid border-custom"
+        id="currentApodImg">
+    <div class="hover-effects">
+        <p class="w-100 h-100 h3">Click here for a random APOD!</p>
+    </div>
+    `
 }
 
 function displaySavedImages(array) {
