@@ -19,7 +19,7 @@ var apodTitleEl = document.getElementById('currentApodTitle')
 var apodCopyrightEl = document.getElementById('currentApodCopyright')
 var apodContainerEl = document.getElementById('apodContainer')
 
-// currentDayCall(currentDayApod) // load the current day's APOD on page load
+currentDayCall(currentDayApod) // load the current day's APOD on page load
 
 // catch wasn't working for 404 error, so this will load our 404 img in those cases instead
 document.addEventListener('error', e => {
@@ -179,6 +179,8 @@ var clearBtnEl = document.getElementById('clearStorage')
 clearBtnEl.addEventListener("click", () => { // deletes all items in localStorage
     localStorage.clear()
     displaySavedImages()
+    savedPicturesArray = []
+    return savedPicturesArray
 })
 
 function currentDayCall(api) { // function to load the current day's APOD
