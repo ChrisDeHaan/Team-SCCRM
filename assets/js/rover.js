@@ -42,6 +42,7 @@ function fetchCameraManifest(rover, solDate) {
             const cameraList = manifestEntry.cameras;
             return cameraList;
         });
+        
 }
 
 
@@ -151,10 +152,11 @@ $(document).ready(function() {
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
         fetchRoverPhotos(rover, solDate)
-            
             .then(photos => {
+                console.log(photos)
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
+                if (photos.length === 0) {errorLog("No photos taken on this date!")}
                 if (solDate > maxDate) {errorLog('You exceeded the max sol date!')}
             });
         fetchCameraManifest(rover, solDate)
