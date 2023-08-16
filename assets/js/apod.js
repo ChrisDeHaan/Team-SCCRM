@@ -72,9 +72,7 @@ monthSelectEl.addEventListener('click', () => { // populates month
 
 daySelectEl.addEventListener('click', () => { // populates days
     // first, check for leap years
-    if (monthSelectEl.value === 'Feb' && (yearSelectEl.value === '2024' || yearSelectEl.value === '2020' ||
-        yearSelectEl.value === '2016' || yearSelectEl.value === '2012' || yearSelectEl.value === '2008' ||
-        yearSelectEl.value === '2004' || yearSelectEl.value === '2000' || yearSelectEl.value === '1996')) {
+    if (monthSelectEl.value === 'Feb' && (yearSelectEl.value % 4) === 0) {
         if (daySelectEl.length !== 30) {
             dynamicDays(1, 30)
         } else { return }; // this is used to not repopulate the list if it already has the correct number of days

@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function() {
 // When screen adjusts below 951px the class of hidden is removed and bios are displayed
 function handleScreenSize() {
     var screenSize = window.innerWidth;
-    var hiddenElements = document.querySelectorAll('.hidden');
+    var hiddenElements = document.querySelectorAll('.bio-cards');
 
-    hiddenElements.forEach(function(element) {
-        if (screenSize < 1018) {
+    hiddenElements.forEach( element => {
+        if (screenSize < 1062) {
             element.classList.remove('hidden');
         } else {
             element.classList.add('hidden');
