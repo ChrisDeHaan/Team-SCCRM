@@ -42,6 +42,7 @@ function fetchCameraManifest(rover, solDate) {
             const cameraList = manifestEntry.cameras;
             return cameraList;
         });
+        
 }
 
 
@@ -145,16 +146,18 @@ $(document).ready(function() {
     })
 
 
-    // 
+    // The search button populates the gallery and camera selector
     searchButtonEl.on('click', function() {
-        reticulatingSplines(); //
+        reticulatingSplines(); //Loading...
         rover = roverSelectEl.val();
         solDate = solDateEl.val();
         fetchRoverPhotos(rover, solDate)
-            
             .then(photos => {
+                console.log(photos)
                 createImageCards(photos);
                 camFilterEl.removeClass('d-none');
+                // An error message is displayed for bad calls.
+                if (photos.length === 0) {errorLog(`${rover} took no photos on sol date ${solDate}!`)}
                 if (solDate > maxDate) {errorLog('You exceeded the max sol date!')}
             });
         fetchCameraManifest(rover, solDate)
