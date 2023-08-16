@@ -64,7 +64,7 @@ function wouldYouLikeToKnowMore(rover) {
     learnMoreEl = $(`#rover-details`);
     fetchRoverDetails(rover)
         .then(roverDetails => {
-            const maxDate = roverDetails.max_sol;
+            maxDate = roverDetails.max_sol;
             const launchDate = dayjs(roverDetails.launch_date).format('MM/DD/YYYY');
             const landingDate = dayjs(roverDetails.landing_date).format('MM/DD/YYYY');
             // The maximum sol date is displayed in the date search form
