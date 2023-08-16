@@ -6,6 +6,7 @@
 
 // ELEMENTS
 const galleryEl = $('#rover-gallery-display');
+const photoLengthEl = $('#rover-gallery-length')
 const roverSelectEl = $('#rover-select');
 const cameraSelectEl = $('#rover-cam-select');
 const solDateEl = $('#rover-sol-input');
@@ -155,10 +156,15 @@ $(document).ready(function() {
             .then(photos => {
                 console.log(photos)
                 createImageCards(photos);
+                photoLengthEl.text(`${(galleryEl.children().length + 1)} photos`);
                 camFilterEl.removeClass('d-none');
                 // An error message is displayed for bad calls.
-                if (photos.length === 0) {errorLog(`${rover} took no photos on sol date ${solDate}!`)}
-                if (solDate > maxDate) {errorLog('You exceeded the max sol date!')}
+                if (photos.length === 0) {
+                    errorLog(`${rover} took no photos on sol date ${solDate}!`);
+                    photoLengthEl.text(`0 photos`)}
+                if (solDate > maxDate) {
+                    errorLog('You exceeded the max sol date!')
+                    photoLengthEl.text(`0 photos`)}
             });
         fetchCameraManifest(rover, solDate)
             .then(cameraList => {
@@ -170,6 +176,7 @@ $(document).ready(function() {
     // Gallery is filtered based on currently selected camera
     cameraSelectEl.on('input', function() {
         const selectedFilter = $(this).children('option:selected').val();
+        photoLengthEl.text(`${galleryEl.children().length} photos`);
         $('.rover-image-card').each(function() {
             const cardCamera = $(this).data('camera');
             $(this).toggle(cardCamera === selectedFilter);//If true, show. If false, hide.
