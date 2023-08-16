@@ -156,7 +156,7 @@ $(document).ready(function() {
             .then(photos => {
                 console.log(photos)
                 createImageCards(photos);
-                photoLengthEl.text(`${(galleryEl.children().length + 1)} photos`);
+                photoLengthEl.text(`${galleryEl.children().length} photos`);
                 camFilterEl.removeClass('d-none');
                 // An error message is displayed for bad calls.
                 if (photos.length === 0) {
