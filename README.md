@@ -2,7 +2,9 @@
 
 ## Description
 
-We created this website as a way to combine 2 of NASA's popular API's that provide photos from the Mars Rovers and the Astronomy Picture of the Day. The intended user is one who appreciates photos of/about/from space who wants easier access to up-to-date NASA photos. Our website uses an intuitive and responsive design in order to deliver the easiest experience for users searching or browsing through these images. 
+Hello everyone! We're Team SCRRM and this is our online platform designed to satisfy your cosmic curiousity. We created this website as a way to combine 2 of NASA's popular API's that provide photos from the Mars Rovers and the Astronomy Picture of the Day. We utilized Bootstrap, DayJS, and JQuery in order to display some of NASA's most captivating images.
+
+We designed our site with space enthusiasts in mind, who were looking for a dynamic and intuitive way to get their hands on recent Rover and Astronomical images and information. As they explore our website, they'll find distinct pages for each API, along with the profiles of our dedicated team members who've brought this platform to life. 
 
 ## Collaborators:
 
@@ -22,6 +24,10 @@ https://chrisdehaan.github.io/Team-SCCRM/
 ![mobile-mock-up](./assets/images/mock-up-mobile.png)
 ### Web:
 ![website-mock-up](./assets/images/mock-up-web.png)
+
+## API's
+
+- <a href="https://api.nasa.gov/">We used the Astronomy Picture of the Day and Mars Rover Photos API's provided by NASA</a>
 
 ## Technologies Used
 
