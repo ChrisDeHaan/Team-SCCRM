@@ -186,29 +186,29 @@ var quotesObjArray = [
         quote: 'The diversity of the phenomena of nature is so great, and the treasures hidden in the heavens so rich, precisely in order that the human mind shall never be lacking in fresh nourishment.'
     }
 ];
-let randomQuote1 = quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)];
-let randomQuote2 = quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)];
-let randomQuote3 = quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)];
-let randomQuote4 = quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)];
-let randomQuote5 = quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)];
-
-function genRandom() {
-    document.getElementById('quote1').innerHTML = JSON.stringify(randomQuote1.quote);
-    document.getElementById('quote2').innerHTML = JSON.stringify(randomQuote2.quote);
-    document.getElementById('quote3').innerHTML = JSON.stringify(randomQuote3.quote);
-    document.getElementById('quote4').innerHTML = JSON.stringify(randomQuote4.quote);
-    document.getElementById('quote5').innerHTML = JSON.stringify(randomQuote5.quote);
-    document.getElementById('name1').innerHTML = JSON.stringify(randomQuote1.name);
-    document.getElementById('name2').innerHTML = JSON.stringify(randomQuote2.name);
-    document.getElementById('name3').innerHTML = JSON.stringify(randomQuote3.name);
-    document.getElementById('name4').innerHTML = JSON.stringify(randomQuote4.name);
-    document.getElementById('name5').innerHTML = JSON.stringify(randomQuote5.name);
-}
-genRandom();
 
 
 
 
+function generateRandomQuote() {
+
+  
+    const randomQuotes = Array.from({ length: 5 }, () =>
+      quotesObjArray[Math.floor(Math.random() * quotesObjArray.length)]
+    );
+  
+    randomQuotes.forEach((quote, index) => {
+      const quoteElement = document.getElementById(`quote${index + 1}`);
+      const nameElement = document.getElementById(`name${index + 1}`);
+      
+      if (quoteElement && nameElement) {
+        quoteElement.textContent = quote.quote;
+        nameElement.textContent = quote.name;
+      }
+    });
+  }
+  
+  generateRandomQuote();
 
 
 
