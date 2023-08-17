@@ -11,9 +11,7 @@ body {
    height: 50%;
     margin-left: auto;
     padding-top: 0;
-    /* background: linear-gradient(0.28turn, var(--almost-black)10%, var(--dark-grey)20%, 
-    var(--grey)50%, var(--dark-grey)80%, var(--almost-black)90%);
-    color: white; */
+    
 }
 
 #navlinks {
@@ -28,8 +26,7 @@ body {
 
 .logo-container {
     display: flex;
-    /* flex-wrap: nowrap; */
-}
+    
 
 #team {
     padding-top: 42px;
@@ -60,8 +57,7 @@ body {
 
 @media screen and (max-width: 991px) {
     #navToggle {
-        /* position: fixed; */
-        /* justify-self: right; */
+    
        margin-left: 50%;
 
     }
@@ -115,7 +111,7 @@ body {
     }
     body{
         width:94%;
-        /* margin-left:4% ; */
+        
         padding-left: 3%;
     }
 }
