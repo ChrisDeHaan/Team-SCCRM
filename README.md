@@ -6,7 +6,7 @@ Hello everyone! We're Team SCRRM and this is our online platform designed to sat
 
 We designed our site with space enthusiasts in mind, who were looking for a dynamic and intuitive way to get their hands on recent Rover and Astronomical images and information. As they explore our website, they'll find distinct pages for each API, along with the profiles of our dedicated team members who've brought this platform to life. 
 
-## Collaborators:
+## Collaborators
 
 - <a href="https://github.com/Elrond-Hubbard">Michael Marsolo</a>
 - <a href="https://github.com/ChrisDeHaan">Christopher DeHaan</a>
